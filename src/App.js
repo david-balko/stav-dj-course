@@ -1,10 +1,26 @@
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
 import './App.css';
 import { CourseDetails } from './components/CourseDetails';
 import { Welcome } from './components/Welcome';
 import { Syllabus } from './components/Syllabus';
 import { Contact } from './components/Contact';
 import { Instructor } from './components/Instructor';
+import SecularOne from './fonts/SecularOne-Regular.ttf';
+import { Background2 } from './components/Background2';
+
+const secularOne = {
+  fontFamily: 'SecularOne',
+  fontStyle: 'normal',
+  // fontDisplay: 'swap',
+  // fontWeight: '600',
+  src: `
+    local('SecularOne'),
+    local('SecularOne-Regular'),
+    url(${SecularOne}) format('truetype')
+  `,
+  unicodeRange:
+    'U+0590-05FF, U+FB1D-FB4F',
+ };
 
 const theme = createMuiTheme({
   // palette: {
@@ -29,27 +45,27 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    h2: {
-      // fontFamily: `'Inter', sans-serif;`
-      fontFamily: 'Inter',
-      fontWeight: 800
+    fontFamily: `SecularOne, Roboto`,
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '*': {
+          outline: 'none',
+        },
+        '@font-face': [secularOne],
+      },
     },
-    h4: {
-      fontFamily: 'Inter',
-    },
-    h3: {
-      fontSize: 30,
-      fontWeight: 700
-    },
-    body2: {
-      fontSize: 17,
-    }
-  }
+  },
 })
 
 function App() {
+
+
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+        <Background2 />
       <div className="App">
         <Welcome />
         <CourseDetails />

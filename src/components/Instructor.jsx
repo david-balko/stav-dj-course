@@ -7,7 +7,7 @@ import { Image } from "./Image";
 const useStyles = makeStyles(theme => ({
   instructor: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    background: `linear-gradient(rgba(255, 109, 0, 0.60), rgba(255, 109, 0, 0.60)), url(${instructorBackground})`,
+    // background: `linear-gradient(rgba(255, 109, 0, 0.60), rgba(255, 109, 0, 0.60)), url(${instructorBackground})`,
     width: '100%',
     height: '90vh',
     backgroundSize: 'cover',
@@ -37,6 +37,8 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     width: '50vw',
+    outline: '5px double #9838A4',
+    outlineOffset: 15,
     '& > *': {
       margin: theme.spacing(2)
     },
@@ -59,7 +61,7 @@ export const Instructor = inject()(observer((props) =>  {
   const classes = useStyles()
 
   return (
-    <div className={classes.instructor}>
+    <div id="instructor" className={classes.instructor}>
       {/* <div className={classes.imageContainer}>
         <Image height={200} width={200} />
       </div> */}

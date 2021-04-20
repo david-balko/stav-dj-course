@@ -5,9 +5,9 @@ import contactBackground from '../assets/contact-background.jpg'
 const useStyles = makeStyles(theme => ({
   contact: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
+    // background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
     width: '100%',
-    height: 'auto',
+    height: '80vh',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
@@ -57,7 +57,7 @@ export const Contact = inject()(observer((props) =>  {
   const classes = useStyles()
 
   return (
-    <div className={classes.contact}>
+    <div id="contact" className={classes.contact}>
       <Typography paragraph variant="h3">צרו קשר</Typography>
       <div className={classes.text}>
         <div className={classes.details}>

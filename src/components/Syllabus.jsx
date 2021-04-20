@@ -5,9 +5,11 @@ import syllabusBackground from '../assets/syllabus-background.jpg'
 const useStyles = makeStyles(theme => ({
   syllabus: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    background: `linear-gradient(rgba(255, 133, 0, 0.60), rgba(255, 133, 0, 0.60)), url(${syllabusBackground})`,
+    // background: `linear-gradient(rgba(255, 133, 0, 0.60), rgba(255, 133, 0, 0.60))`,
+    // background: `linear-gradient(rgba(255, 133, 0, 0.60), rgba(255, 133, 0, 0.60)), url(${syllabusBackground})`,
     width: '100%',
-    height: '90vh',
+    // height: '100vh',
+    padding: '10vw',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
@@ -44,7 +46,7 @@ export const Syllabus = inject()(observer((props) =>  {
   const classes = useStyles()
 
   return (
-    <div className={classes.syllabus}>
+    <div id="syllabus" className={classes.syllabus}>
       <div className={classes.details} style={{direction: 'rtl'}}>
         <Typography style={{alignSelf: 'center'}} paragraph variant="h3">
           {`סילבוס`}
@@ -52,25 +54,25 @@ export const Syllabus = inject()(observer((props) =>  {
         <Typography variant="h5">
           {`שיעור ראשון`}
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="h6">
           {`- נעשה ככה`}
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="h6">
           {`- נעשה גם ככה`}
         </Typography>
-        <Typography paragraph variant="body2">
+        <Typography paragraph variant="h6">
           {`- הכי טוב נעשה גם את זה`}
         </Typography>
         <Typography variant="h5">
           {`שיעור שני`}
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="h6">
           {`- נתחיל מזה`}
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="h6">
           {`- נמשיך בזה`}
         </Typography>
-        <Typography paragraph variant="body2">
+        <Typography paragraph variant="h6">
           {`- ואם נספיק נעשה גם ככה`}
         </Typography>
 
