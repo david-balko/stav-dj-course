@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/stav-dj-course/static/css/main.636d5dbe.chunk.css",
-    "main.js": "/stav-dj-course/static/js/main.d5c652de.chunk.js",
-    "main.js.map": "/stav-dj-course/static/js/main.d5c652de.chunk.js.map",
+    "main.css": "/stav-dj-course/static/css/main.d3608aa6.chunk.css",
+    "main.js": "/stav-dj-course/static/js/main.e9260e6d.chunk.js",
+    "main.js.map": "/stav-dj-course/static/js/main.e9260e6d.chunk.js.map",
     "runtime-main.js": "/stav-dj-course/static/js/runtime-main.20df50f0.js",
     "runtime-main.js.map": "/stav-dj-course/static/js/runtime-main.20df50f0.js.map",
-    "static/js/2.d53ea689.chunk.js": "/stav-dj-course/static/js/2.d53ea689.chunk.js",
-    "static/js/2.d53ea689.chunk.js.map": "/stav-dj-course/static/js/2.d53ea689.chunk.js.map",
+    "static/js/2.d2e25ef1.chunk.js": "/stav-dj-course/static/js/2.d2e25ef1.chunk.js",
+    "static/js/2.d2e25ef1.chunk.js.map": "/stav-dj-course/static/js/2.d2e25ef1.chunk.js.map",
     "static/js/3.34eff8da.chunk.js": "/stav-dj-course/static/js/3.34eff8da.chunk.js",
     "static/js/3.34eff8da.chunk.js.map": "/stav-dj-course/static/js/3.34eff8da.chunk.js.map",
     "index.html": "/stav-dj-course/index.html",
-    "static/css/main.636d5dbe.chunk.css.map": "/stav-dj-course/static/css/main.636d5dbe.chunk.css.map",
-    "static/js/2.d53ea689.chunk.js.LICENSE.txt": "/stav-dj-course/static/js/2.d53ea689.chunk.js.LICENSE.txt",
+    "static/css/main.d3608aa6.chunk.css.map": "/stav-dj-course/static/css/main.d3608aa6.chunk.css.map",
+    "static/js/2.d2e25ef1.chunk.js.LICENSE.txt": "/stav-dj-course/static/js/2.d2e25ef1.chunk.js.LICENSE.txt",
     "static/media/SecularOne-Regular.9613dd3f.ttf": "/stav-dj-course/static/media/SecularOne-Regular.9613dd3f.ttf",
     "static/media/contact-background.f6075ade.jpg": "/stav-dj-course/static/media/contact-background.f6075ade.jpg",
     "static/media/course-details-background.e3e5af2b.jpg": "/stav-dj-course/static/media/course-details-background.e3e5af2b.jpg",
@@ -19,6 +19,7 @@
     "static/media/dj-mixer.1401ea44.svg": "/stav-dj-course/static/media/dj-mixer.1401ea44.svg",
     "static/media/instructor-background.4a374845.jpg": "/stav-dj-course/static/media/instructor-background.4a374845.jpg",
     "static/media/instructor-pic.60a40613.JPG": "/stav-dj-course/static/media/instructor-pic.60a40613.JPG",
+    "static/media/romantic-vinyl.a486fcf9.svg": "/stav-dj-course/static/media/romantic-vinyl.a486fcf9.svg",
     "static/media/ron-rambell-logo-lay.522a5204.png": "/stav-dj-course/static/media/ron-rambell-logo-lay.522a5204.png",
     "static/media/ron-rambell-logo.f5e658a2.png": "/stav-dj-course/static/media/ron-rambell-logo.f5e658a2.png",
     "static/media/syllabus-background.ab153644.jpg": "/stav-dj-course/static/media/syllabus-background.ab153644.jpg",
@@ -26,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.20df50f0.js",
-    "static/js/2.d53ea689.chunk.js",
-    "static/css/main.636d5dbe.chunk.css",
-    "static/js/main.d5c652de.chunk.js"
+    "static/js/2.d2e25ef1.chunk.js",
+    "static/css/main.d3608aa6.chunk.css",
+    "static/js/main.e9260e6d.chunk.js"
   ]
 }
