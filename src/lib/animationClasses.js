@@ -1,11 +1,19 @@
 import createMixins from "@material-ui/core/styles/createMixins";
 
+// export const colours = [
+//   'rgba(251, 86, 7 , 0.5)',
+//   'rgba(255, 0, 110 , 0.5)',
+//   'rgba(131, 56, 236 , 0.5)',
+//   'rgba(58, 134, 255 , 0.5)',
+//   // 'rgba(255, 190, 11, 1)'
+// ]
+
 export const colours = [
-  'rgba(251, 86, 7 , 1)',
-  'rgba(255, 0, 110 , 1)',
-  'rgba(131, 56, 236 , 1)',
-  'rgba(58, 134, 255 , 1)',
-  // 'rgba(255, 190, 11, 1)'
+  'rgba(164, 219, 248, 1)',
+  'rgba(176, 141, 255, 1)',
+  'rgba(255, 156, 121, 1)',
+  'rgba(255, 116, 0, 1)',
+  'rgba(255, 93, 32, 1)'
 ]
 
 export function getPixelRatio(ctx) {
@@ -161,8 +169,8 @@ export class Particles {
       let size = (Math.random() * 35) + 15
       let x = (Math.random() * (window.innerWidth * this.ratio - 50 - (size * 2))) + 50
       let y = (Math.random() * (window.innerHeight * this.ratio - 50 - (size * 2))) + 50
-      let directionX = (Math.random() * 2) - 1
-      let directionY = (Math.random() * 2) - 1
+      let directionX = (Math.random()) - 0.5
+      let directionY = (Math.random()) - 0.5
       let color = colours[(Math.floor((Math.random() * 5)))]
       if (i !== 0) {
         for (let j=0; j < this.particles.length; j++) {

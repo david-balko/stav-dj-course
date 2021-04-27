@@ -5,9 +5,9 @@ import contactBackground from '../assets/contact-background.jpg'
 const useStyles = makeStyles(theme => ({
   contact: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    // background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
+    background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
     width: '100%',
-    height: '80vh',
+    // height: '80vh',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
@@ -36,15 +36,18 @@ const useStyles = makeStyles(theme => ({
   text: {
     direction: 'rtl',
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center'
   },
   form: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
     '& > *': {
-      margin: theme.spacing(2)
+      margin: theme.spacing(2),
+      flexGrow: 0,
+      
     },
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column'
@@ -60,6 +63,7 @@ export const Contact = inject()(observer((props) =>  {
     <div id="contact" className={classes.contact}>
       <Typography paragraph variant="h3">צרו קשר</Typography>
       <div className={classes.text}>
+
         <div className={classes.details}>
           <Typography paragraph variant="h6">0545555555 | email-tov@gmail.com</Typography>
           <Typography paragraph variant="h6">או שפשוט תשאירו פרטים:</Typography>
@@ -76,6 +80,7 @@ export const Contact = inject()(observer((props) =>  {
           </Paper>
           <Button variant="contained">שלח</Button>
         </div>
+        <Typography paragraph variant="h6">מוזמנים ליצור איתי קשר לגבי כל התייעצות גם אם מרגישה לכם קטנה, אני זמין עבורכם ופה בשבילכם כבר מהשלבים של ההתלבטויות הראשונות.</Typography>
       </div>
     </div>
   )

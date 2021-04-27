@@ -46,6 +46,9 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: `SecularOne, Roboto`,
+    // h6: {
+    //   fontSize: 
+    // }
   },
   overrides: {
     MuiCssBaseline: {

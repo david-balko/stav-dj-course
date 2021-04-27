@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
   svgBackground: {
     position: 'fixed',
     zIndex: -1,
-    backgroundColor: 'rgba(255, 190, 11, 1)',
+    backgroundColor: '#f6ad38',
     height: '100%',
     width: '100%'
   },
@@ -47,7 +47,7 @@ export const Background2 = inject()(observer((props) =>  {
     canvas.style.height = `${height}px`;
 
     let mouseParticle = new Particle(0, 0, 0, 0, 30, 'rgba(255, 0, 0, 1)')
-    let particles = new Particles(25, ctx, width, height, mouseParticle)
+    let particles = new Particles(13, ctx, width, height, mouseParticle)
 
 
     const onResize = () => {

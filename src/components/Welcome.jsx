@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     // background: `linear-gradient(rgba(255, 158, 0, 0.60), rgba(255, 158, 0, 0.60))`,
     // background: `linear-gradient(rgba(255, 158, 0, 0.60), rgba(255, 158, 0, 0.60)), url(${welcomeBackground})`,
     width: '100%',
-    height: '100vh',
+    height: '101vh',
     // backgroundSize: 'cover',
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center',
@@ -29,23 +29,23 @@ const useStyles = makeStyles(theme => ({
       // height: 800,
       height: '125vh',
     },
-    '&::before': {
-      content: '""',
-      background: `url(${welcomeBackground})`,
-      backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
-      backgroundPosition: 'center',
-      opacity: 0.5,
-      // top: window.innerWidth * (12.5/100),
-      left: 0,
-      width: '100vw',
-      height: '50vh',
-      position: 'absolute',
-      alignSelf: 'center',
-      [theme.breakpoints.down('sm')]: {
-        top: '25%'
-      },
-    },
+    // '&::before': {
+    //   content: '""',
+    //   background: `url(${welcomeBackground})`,
+    //   backgroundSize: 'cover',
+    //   backgroundAttachment: 'fixed',
+    //   backgroundPosition: 'center',
+    //   opacity: 0.5,
+    //   // top: window.innerWidth * (12.5/100),
+    //   left: 0,
+    //   width: '100vw',
+    //   height: '50vh',
+    //   position: 'absolute',
+    //   alignSelf: 'center',
+    //   [theme.breakpoints.down('sm')]: {
+    //     top: '25%'
+    //   },
+    // },
   },
   container: {
     display: 'flex',
@@ -141,7 +141,7 @@ export const Welcome = inject()(observer((props) =>  {
             <Typography style={{ direction: 'rtl' }} variant="h4" paragraph>
             לקורס התקלוט שבו החלום הופך למציאות.<br/>יחס אישי למידה בקבוצות קטנות באולפן מקצועי באווירה שמחה וחברית.
           </Typography>
-          <Button onClick={scrollToContact} variant="contained" style={{fontSize: 16, direction: 'rtl' }}>הרשמו כאן</Button>
+          <Button size="large" onClick={scrollToContact} variant="contained" style={{fontSize: 25, direction: 'rtl' }}>הרשמו כאן</Button>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { makeStyles, div, Typography, useTheme, useMediaQuery } from "@material-ui/core";
+import { makeStyles, div, Typography, useTheme, useMediaQuery, Divider } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
 import { useEffect, useRef } from "react";
 import LazyLoad from "react-lazyload";
@@ -20,12 +20,12 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: theme.spacing(2),
-    '& > *': {
-      margin: theme.spacing(2)
-    },
+    minHeight: 30,
+    // padding: theme.spacing(2),
+    marginBottom: '5vh',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
+      height: 'auto',
       // height: 800,
       
     },
@@ -56,17 +56,29 @@ const useStyles = makeStyles(theme => ({
   //     flexDirection: 'column-reverse',
   //   }
   // },
-  detailsContainer: {
+  detailsOverflow: {
     width: '50vw',
     marginLeft: 'auto',
-    marginRight: -21,
     [theme.breakpoints.down('sm')]: {
-      width: '80vw'
+      width: '80vw',
+      marginTop: '15vh'
     },
+    color: 'white',
+    overflow: 'hidden'
+  },
+  detailsContainer: {
+    // width: '50vw',
+    // marginLeft: 'auto',
+    marginRight: -21,
+    paddingRight: 20
+    // [theme.breakpoints.down('sm')]: {
+    //   width: '80vw'
+    // },
+    // color: 'white',
     // paddingRight: 17
   },
   details: {
-    backgroundColor: 'rgba(131, 56, 236 , 0.7)',
+    backgroundColor: 'rgb(137,136,223)',
     backdropFilter: 'blur(5px)',
     // border: '1px solid #6A040F',
     borderRadius: 4,
@@ -89,11 +101,11 @@ const useStyles = makeStyles(theme => ({
   },
   imageContainer: {
     position: 'absolute',
-    // top: '-25vh',
+    top: '-25vh',
     left: '-20vw',
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
-      // top: '-10vh',
+      top: '0',
     }
     // animationDelay: '-0.75s',
   },
@@ -132,7 +144,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   svgMixer: {
-    strokeDashoffset: 822,
+    // strokeDashoffset: 822,
     animation: `$imageEnter 1125ms ${theme.transitions.easing.easeInOut}`,
     width: '50vw',
     [theme.breakpoints.down('sm')]: {
@@ -151,51 +163,64 @@ export const CourseDetails = inject()(observer((props) =>  {
   return (
     <>
     <div className={classes.courseDetails} id="course-details">
-      <div className={classes.imageContainer}>
-        <LazyLoad className={classes.courseDetail} offset={desktop ? -150 : 0} >
-          {/* <div className={classes.imageContainer}>
-            <Image classes={classes.image} height={desktop ? '30vw' : '70vw'} width={desktop ? '30vw' : '70vw'} src={courseDetailsPic} />
-          </div> */}
-            <MixerSvg className={classes.svgMixer} />
-        </LazyLoad>
-      </div>
+      <LazyLoad className={classes.courseDetail} >
 
+        <div className={classes.imageContainer}>
+          <MixerSvg className={classes.svgMixer} />
+        </div>
+      </LazyLoad>
+
+      <div className={classes.detailsOverflow}>
         <div className={classes.detailsContainer}>
-        <LazyLoad className={classes.courseDetail} offset={desktop ? -75 : 0} >
-          <div className={classes.details} style={{direction: 'rtl'}}>
-            <Typography variant="h3">
-              {`על הקורס`}
-            </Typography>
-            <Typography paragraph variant="h6">
-              {`הקורס נבנה בצורה כזו שכל אחד שיסיים אותו ירגיש שהוא מוכן לנגן באירועים ויידע שיש לו תמיכה גם להמשך הדרך.`}
-              <br/>
-              {`הקורס בקבוצות קטנות של ארבעה תלמידים. כדי שיהיה יחס אישי ומנטורינג במהלך הקורס.`}
-              <br/>
-              {`גם לאחר לקורס אהיה זמין לכל שאלה והתייעצות.`}
-            </Typography>
-            <Typography variant="h5">
-              {`מיקום`}
-            </Typography>
-            <Typography paragraph variant="h6">
-              {`הקורס יתרכש באולפני השטוביה שם יהיה לנו חדר גדול ומקצועי להפקה מוזיקלית, 
-              הקורס יתקיים בסטודיו להפקה מוזקלית מקצועי מטופל אקוסטית שיהווה לנו בית נעים ונינוח.`}
-            </Typography>
-            <Typography variant="h5">
-              {`למי מיועד הקורס?`}
-            </Typography>
-            <Typography paragraph variant="h6">
-              {`הקורס מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית וניגון לייב מול קהל. `}
-            </Typography>
-            <Typography variant="h5">
-              {`איזה ציוד צריך?`}
-            </Typography>
-            <Typography paragraph variant="h6">
-              {`קונטרולר DDJ 400, תוכנת רקורדבוקס (מגיעה ברכישת קונטרולר) אוזניות וכבלים. 
-              אם ברצונכם קונטרולר אחר פנו אליי ואעזור לכם לבחור אחד לפי הצרכים שלכם. 
-              בסופו של דבר כל הקונטרולרים דומים במהותם.`}
-            </Typography>
-          </div>
-        </LazyLoad>
+          <LazyLoad className={classes.courseDetail} >
+            <div className={classes.details} style={{direction: 'rtl'}}>
+              <Typography paragraph variant="h3">
+                {`על הקורס`}
+              </Typography>
+              <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
+                <hr />
+              </div>
+              <Typography paragraph variant="h6">
+                {`הקורס נבנה בצורה כזו שכל אחד שיסיים אותו ירגיש שהוא מוכן לנגן באירועים ויידע שיש לו תמיכה גם להמשך הדרך.`}
+                <br/>
+                {`הקורס בקבוצות קטנות של ארבעה תלמידים. כדי שיהיה יחס אישי ומנטורינג במהלך הקורס.`}
+                <br/>
+                {`גם לאחר לקורס אהיה זמין לכל שאלה והתייעצות.`}
+              </Typography>
+
+              <Typography paragraph variant="h4">
+                {`מיקום`}
+              </Typography>
+              <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
+                <hr />
+              </div>
+              <Typography paragraph variant="h6">
+                {`הקורס יתרכש באולפני השטוביה שם יהיה לנו חדר גדול ומקצועי להפקה מוזיקלית, 
+                הקורס יתקיים בסטודיו להפקה מוזקלית מקצועי מטופל אקוסטית שיהווה לנו בית נעים ונינוח.`}
+              </Typography>
+              <Typography paragraph variant="h4">
+                {`למי מיועד הקורס?`}
+              </Typography>
+              <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
+                <hr />
+              </div>
+              <Typography paragraph variant="h6">
+                {`הקורס מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית וניגון לייב מול קהל. `}
+              </Typography>
+              <Typography paragraph variant="h4">
+                {`איזה ציוד צריך?`}
+              </Typography>
+              <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
+                <hr />
+              </div>
+              <Typography paragraph variant="h6">
+                {`קונטרולר DDJ 400, תוכנת רקורדבוקס (מגיעה ברכישת קונטרולר) אוזניות וכבלים. 
+                אם ברצונכם קונטרולר אחר פנו אליי ואעזור לכם לבחור אחד לפי הצרכים שלכם. 
+                בסופו של דבר כל הקונטרולרים דומים במהותם.`}
+              </Typography>
+            </div>
+          </LazyLoad>
+        </div>
       </div>
     </div>
     </>
