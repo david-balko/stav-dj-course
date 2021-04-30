@@ -141,7 +141,7 @@ export const Welcome = inject()(observer((props) =>  {
             <Typography style={{ direction: 'rtl' }} variant="h4" paragraph>
             לקורס התקלוט שבו החלום הופך למציאות.<br/>יחס אישי למידה בקבוצות קטנות באולפן מקצועי באווירה שמחה וחברית.
           </Typography>
-          <Button size="large" onClick={scrollToContact} variant="contained" style={{fontSize: 25, direction: 'rtl' }}>הרשמו כאן</Button>
+          <Button size="large" onClick={scrollToContact} variant="contained" style={{fontSize: 25, direction: 'rtl' }}>דברו איתי</Button>
         </div>
       </div>
     </div>

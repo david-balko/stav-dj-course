@@ -5,7 +5,8 @@ import contactBackground from '../assets/contact-background.jpg'
 const useStyles = makeStyles(theme => ({
   contact: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
+    // background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
+    backgroundColor: 'rgb(137,136,223)',
     width: '100%',
     // height: '80vh',
     backgroundSize: 'cover',

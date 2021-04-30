@@ -18,11 +18,11 @@ const useStyles = makeStyles(theme => ({
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center',
     display: 'flex',
+    marginBottom: theme.spacing(10),
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 30,
     // padding: theme.spacing(2),
-    marginBottom: '5vh',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
@@ -64,13 +64,14 @@ const useStyles = makeStyles(theme => ({
       marginTop: '15vh'
     },
     color: 'white',
-    overflow: 'hidden'
+    // overflow: 'hidden'
   },
   detailsContainer: {
     // width: '50vw',
     // marginLeft: 'auto',
-    marginRight: -21,
-    paddingRight: 20
+    // marginRight: -21,
+    paddingRight: theme.spacing(2),
+    
     // [theme.breakpoints.down('sm')]: {
     //   width: '80vw'
     // },
@@ -78,13 +79,20 @@ const useStyles = makeStyles(theme => ({
     // paddingRight: 17
   },
   details: {
-    backgroundColor: 'rgb(137,136,223)',
+    position: 'relative',
+    zIndex: 2,
+    backgroundColor: 'rgb(94, 212, 200, 0.6)',
     backdropFilter: 'blur(5px)',
     // border: '1px solid #6A040F',
-    borderRadius: 4,
-    boxShadow: '0 0 0.5rem 0 rgba(0, 0, 0, 0.2)',
-    padding: 15,
-    paddingRight: 30,
+    borderRadius: 8,
+    boxShadow: `-0.25rem 0 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0 -0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1)`,
+    // boxShadow: '5px 10px 8px 10px #888888',
+
+    padding: theme.spacing(4),
+    // paddingRight: 30,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -98,10 +106,14 @@ const useStyles = makeStyles(theme => ({
       // width: '80vw'
     },
     animation: `$textEnter 750ms ${theme.transitions.easing.easeInOut}`,
+    '& > *': {
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2)
+    }
   },
   imageContainer: {
     position: 'absolute',
-    top: '-25vh',
+    top: '-30vh',
     left: '-20vw',
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
@@ -174,49 +186,48 @@ export const CourseDetails = inject()(observer((props) =>  {
         <div className={classes.detailsContainer}>
           <LazyLoad className={classes.courseDetail} >
             <div className={classes.details} style={{direction: 'rtl'}}>
-              <Typography paragraph variant="h3">
+              <Typography variant="h3">
                 {`על הקורס`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography paragraph variant="h6">
+              <Typography variant="h6">
                 {`הקורס נבנה בצורה כזו שכל אחד שיסיים אותו ירגיש שהוא מוכן לנגן באירועים ויידע שיש לו תמיכה גם להמשך הדרך.`}
                 <br/>
-                {`הקורס בקבוצות קטנות של ארבעה תלמידים. כדי שיהיה יחס אישי ומנטורינג במהלך הקורס.`}
-                <br/>
-                {`גם לאחר לקורס אהיה זמין לכל שאלה והתייעצות.`}
+                {`הקורס בקבוצות קטנות של ארבעה תלמידים, כדי שיהיה יחס אישי ומנטורינג בתקשורת מלאה ואישית לאורך כל הקורס וגם אחריו מה שיאפשר לכם לקבל את מלוא התמיכה שאתם צריכים בתחילת הדרך לעבר החלום שלכם.`}
               </Typography>
 
-              <Typography paragraph variant="h4">
+              <Typography variant="h4">
                 {`מיקום`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography paragraph variant="h6">
-                {`הקורס יתרכש באולפני השטוביה שם יהיה לנו חדר גדול ומקצועי להפקה מוזיקלית, 
-                הקורס יתקיים בסטודיו להפקה מוזקלית מקצועי מטופל אקוסטית שיהווה לנו בית נעים ונינוח.`}
+              <Typography variant="h6">
+                {`הקורס יתרחש באולפני השטוביה, שם יהיה לנו חדר גדול מקצועי ומטופל אקוסטית להפקה מוזיקלית שיהווה לנו בית נעים ונינוח למשך הקורס.`}
               </Typography>
-              <Typography paragraph variant="h4">
+              <Typography variant="h4">
                 {`למי מיועד הקורס?`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography paragraph variant="h6">
+              <Typography variant="h6">
                 {`הקורס מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית וניגון לייב מול קהל. `}
               </Typography>
-              <Typography paragraph variant="h4">
+              <Typography variant="h4">
                 {`איזה ציוד צריך?`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography paragraph variant="h6">
-                {`קונטרולר DDJ 400, תוכנת רקורדבוקס (מגיעה ברכישת קונטרולר) אוזניות וכבלים. 
-                אם ברצונכם קונטרולר אחר פנו אליי ואעזור לכם לבחור אחד לפי הצרכים שלכם. 
-                בסופו של דבר כל הקונטרולרים דומים במהותם.`}
+              <Typography variant="h6">
+                {`קונטרולר DDJ400 ומעלה, תוכנת רקורדבוקס(מגיעה ברכישת קונטרולר), אוזניות וכבלים.`}
+                <br />
+                {`אם ברצונכם לרכוש קונטרולר אחר פנו אליי ואעזור לכם לבחור אחד לפי הצרכים שלכם.`}
+                <br />
+                {`בסופו של דבר כל הקונטרולרים דומים במהותם.`}
               </Typography>
             </div>
           </LazyLoad>

@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
     position: 'relative',
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
+    marginBottom: theme.spacing(15),
     // backgroundSize: 'cover',
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center',
@@ -66,13 +67,13 @@ const useStyles = makeStyles(theme => ({
       marginTop: '15vh'
     },
     color: 'white',
-    overflow: 'hidden'
+    // overflow: 'hidden'
   },
   detailsContainer: {
     // width: '50vw',
     // marginLeft: 'auto',
-    marginLeft: -21,
-    paddingLeft: 20
+    // marginLeft: -21,
+    paddingLeft: theme.spacing(2)
     // [theme.breakpoints.down('sm')]: {
     //   width: '80vw'
     // },
@@ -80,13 +81,19 @@ const useStyles = makeStyles(theme => ({
     // paddingRight: 17
   },
   details: {
-    backgroundColor: 'rgb(137,136,223)',
+    // backgroundColor: 'rgb(137,136,223)',
+    position: 'relative',
+    zIndex: 2,
+    backgroundColor: 'rgb(94, 212, 200, 0.6)',
     backdropFilter: 'blur(5px)',
     // border: '1px solid #6A040F',
-    borderRadius: 4,
-    boxShadow: '0 0 0.5rem 0 rgba(0, 0, 0, 0.2)',
-    padding: 15,
-    paddingLeft: 30,
+    borderRadius: 8,
+    boxShadow: `-0.25rem 0 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0 -0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1)`,
+    padding: theme.spacing(4),
+    // paddingLeft: 30,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -99,6 +106,10 @@ const useStyles = makeStyles(theme => ({
       // height: 'auto',
       // width: '80vw'
     },
+    '& > *': {
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2)
+    },
     animation: `$textEnter 750ms ${theme.transitions.easing.easeInOut}`,
   },
   imageContainer: {
@@ -109,7 +120,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       top: '0',
     },
-    zIndex: -1
+    // zIndex: -1.5
     // animationDelay: '-0.75s',
   },
   "@keyframes textEnter": {
@@ -161,8 +172,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'row',
     alignSelf: 'center',
     '& > *': {
-      marginRight: theme.spacing(2),
-      marginLeft: theme.spacing(2)
+     margin: theme.spacing(2)
     }
 
   }
@@ -190,10 +200,10 @@ export const Syllabus = inject()(observer((props) =>  {
         <div className={classes.detailsContainer}>
           <LazyLoad className={classes.courseDetail} >
             <div className={classes.details} style={{direction: 'rtl'}}>
-              <Typography paragraph variant="h3">
+              <Typography variant="h3">
                 {`סילבוס`}
               </Typography>
-              <Typography paragraph variant="h6">
+              <Typography variant="h6">
                 {`בכל מפגש יהיה חלק מעשי! למה? כי אין כמו להתנסות בעצמנו`}
               </Typography>
               
@@ -231,8 +241,7 @@ export const Syllabus = inject()(observer((props) =>  {
                     <br />
                     {`- קאט מיקס cut mix`}
                   </Typography>
-                </div>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
+                  <br />
                   <Typography paragraph variant="h4">
                     {`שיעור רביעי`}
                   </Typography>
@@ -243,7 +252,8 @@ export const Syllabus = inject()(observer((props) =>  {
                     <br />
                     {`- מתחילים ללמוד אפקטים לעומק, הפעם Reverb`}
                   </Typography>
-                  <br />
+                </div>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
                   <Typography paragraph variant="h4">
                     {`שיעור חמישי`}
                   </Typography>
@@ -265,6 +275,31 @@ export const Syllabus = inject()(observer((props) =>  {
                     <br />
                     {`- דאבל דרופינג double Dropping`}
                   </Typography>
+                  <br />
+                  <Typography paragraph variant="h4">
+                    {`שיעור שביעי`}
+                  </Typography>
+                  <Typography paragraph variant="h6">
+                    {`- השילוש הקדוש די'גיי קהל אווירה`}
+                    <br />
+                    {`- עמידה מול קהל`}
+                    <br />
+                    {`- מה עושים כשמגיעים לעמדה??`}
+                    <br />
+                    {`- יצירת עלייה עם לופ.`}
+                  </Typography>
+                  <br />
+                  <Typography paragraph variant="h4">
+                    {`שיעור שמיני`}
+                  </Typography>
+                  <Typography paragraph variant="h6">
+                    {`- התקלוט הראשון שלכם!`}
+                    <br />
+                    {`- אירוע לכל החברים שבו כל אחד מנגן סט של חצי שעה!`}
+                    <br />
+                    {`- סיכום שיתוף חוויות ומה עושים מפה.`}
+                  </Typography>
+                  <br />
                 </div>
 
               </div>
