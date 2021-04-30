@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/stav-dj-course/static/css/main.d3608aa6.chunk.css",
-    "main.js": "/stav-dj-course/static/js/main.e9260e6d.chunk.js",
-    "main.js.map": "/stav-dj-course/static/js/main.e9260e6d.chunk.js.map",
+    "main.js": "/stav-dj-course/static/js/main.6129167c.chunk.js",
+    "main.js.map": "/stav-dj-course/static/js/main.6129167c.chunk.js.map",
     "runtime-main.js": "/stav-dj-course/static/js/runtime-main.20df50f0.js",
     "runtime-main.js.map": "/stav-dj-course/static/js/runtime-main.20df50f0.js.map",
     "static/js/2.d2e25ef1.chunk.js": "/stav-dj-course/static/js/2.d2e25ef1.chunk.js",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.20df50f0.js",
     "static/js/2.d2e25ef1.chunk.js",
     "static/css/main.d3608aa6.chunk.css",
-    "static/js/main.e9260e6d.chunk.js"
+    "static/js/main.6129167c.chunk.js"
   ]
 }
