@@ -114,7 +114,7 @@ const useStyles = makeStyles(theme => ({
   imageContainer: {
     position: 'absolute',
     top: '-30vh',
-    left: '-20vw',
+    left: '-18vw',
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
       top: '0',
@@ -192,7 +192,7 @@ export const CourseDetails = inject()(observer((props) =>  {
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography variant="h6">
+              <Typography variant="h5">
                 {`הקורס נבנה בצורה כזו שכל אחד שיסיים אותו ירגיש שהוא מוכן לנגן באירועים ויידע שיש לו תמיכה גם להמשך הדרך.`}
                 <br/>
                 {`הקורס בקבוצות קטנות של ארבעה תלמידים, כדי שיהיה יחס אישי ומנטורינג בתקשורת מלאה ואישית לאורך כל הקורס וגם אחריו מה שיאפשר לכם לקבל את מלוא התמיכה שאתם צריכים בתחילת הדרך לעבר החלום שלכם.`}
@@ -204,7 +204,7 @@ export const CourseDetails = inject()(observer((props) =>  {
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography variant="h6">
+              <Typography variant="h5">
                 {`הקורס יתרחש באולפני השטוביה, שם יהיה לנו חדר גדול מקצועי ומטופל אקוסטית להפקה מוזיקלית שיהווה לנו בית נעים ונינוח למשך הקורס.`}
               </Typography>
               <Typography variant="h4">
@@ -213,8 +213,8 @@ export const CourseDetails = inject()(observer((props) =>  {
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography variant="h6">
-                {`הקורס מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית וניגון לייב מול קהל. `}
+              <Typography variant="h5">
+                {`הקורס מתאים לכולם! אין צורך בידע קודם. הוא מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית לייב מול קהל.`}
               </Typography>
               <Typography variant="h4">
                 {`איזה ציוד צריך?`}
@@ -222,7 +222,7 @@ export const CourseDetails = inject()(observer((props) =>  {
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography variant="h6">
+              <Typography variant="h5">
                 {`קונטרולר DDJ400 ומעלה, תוכנת רקורדבוקס(מגיעה ברכישת קונטרולר), אוזניות וכבלים.`}
                 <br />
                 {`אם ברצונכם לרכוש קונטרולר אחר פנו אליי ואעזור לכם לבחור אחד לפי הצרכים שלכם.`}

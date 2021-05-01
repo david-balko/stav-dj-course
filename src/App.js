@@ -6,6 +6,8 @@ import { Syllabus } from './components/Syllabus';
 import { Contact } from './components/Contact';
 import { Instructor } from './components/Instructor';
 import SecularOne from './fonts/SecularOne-Regular.ttf';
+import Aran400 from './fonts/os_aran_400ffc-webfont.woff2';
+import Aran500 from './fonts/os_aran_w_500ffc-webfont.woff2';
 import { Background2 } from './components/Background2';
 
 const secularOne = {
@@ -17,6 +19,34 @@ const secularOne = {
     local('SecularOne'),
     local('SecularOne-Regular'),
     url(${SecularOne}) format('truetype')
+  `,
+  unicodeRange:
+    'U+0590-05FF, U+FB1D-FB4F',
+};
+
+const aran400 = {
+  fontFamily: 'Aran',
+  fontStyle: 'normal',
+  // fontDisplay: 'swap',
+  // fontWeight: '600',
+  src: `
+    local('Aran'),
+    local('Aran-Regular'),
+    url(${Aran400}) format('truetype')
+  `,
+  unicodeRange:
+    'U+0590-05FF, U+FB1D-FB4F',
+};
+
+const aran500 = {
+  fontFamily: 'Aran',
+  fontStyle: 'bold',
+  // fontDisplay: 'swap',
+  // fontWeight: '600',
+  src: `
+    local('Aran'),
+    local('Aran-Bold'),
+    url(${Aran500}) format('truetype')
   `,
   unicodeRange:
     'U+0590-05FF, U+FB1D-FB4F',
@@ -45,7 +75,7 @@ const theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: `SecularOne, Roboto`,
+    fontFamily: `Aran, Heebo, SecularOne, Roboto`,
     // h6: {
     //   fontSize: 
     // }
@@ -56,7 +86,7 @@ const theme = createMuiTheme({
         '*': {
           outline: 'none',
         },
-        '@font-face': [secularOne],
+        '@font-face': [secularOne, aran400, aran500],
       },
     },
   },
@@ -73,8 +103,8 @@ function App() {
         <Welcome />
         <CourseDetails />
         <Syllabus />
-        <Contact />
         <Instructor />
+        <Contact />
       </div>
     </ThemeProvider>
   );

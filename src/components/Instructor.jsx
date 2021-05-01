@@ -1,4 +1,4 @@
-import { makeStyles, div, Typography, useTheme, useMediaQuery } from "@material-ui/core";
+import { makeStyles, div, Typography, useTheme, useMediaQuery, Avatar } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
 import instructorBackground from '../assets/instructor-background.jpg'
 import instructorPic from '../assets/instructor-pic.JPG'
@@ -23,22 +23,29 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'column',
       height: 800,
       
-    }
-
+    },
+    padding: theme.spacing(4),
+    color: 'white',
+    
   },
   details: {
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-    backdropFilter: 'blur(3px)',
+    position: 'relative',
+    zIndex: 2,
+    backgroundColor: 'rgb(94, 212, 200, 0.6)',
+    backdropFilter: 'blur(5px)',
     // border: '1px solid #6A040F',
-    borderRadius: 4,
-    boxShadow: '0 0 2rem 0 rgba(0, 0, 0, 0.2)',
-    padding: 15,
+    borderRadius: 8,
+    boxShadow: `-0.25rem 0 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0.5rem 0 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0 -0.25rem 0.5rem 0 rgba(0, 0, 0, 0.1),
+                0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.1)`,
+    // boxShadow: '5px 10px 8px 10px #888888',
+
+    padding: theme.spacing(4),
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
-    width: '50vw',
-    outline: '5px double #9838A4',
-    outlineOffset: 15,
+    width: '100%',
     '& > *': {
       margin: theme.spacing(2)
     },
@@ -50,6 +57,12 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     flex: 'none'
+  },
+  text: {
+    width: '800%',
+    '& *': {
+      margin: theme.spacing(2)
+    },
   }
 }))
 
@@ -66,39 +79,42 @@ export const Instructor = inject()(observer((props) =>  {
         <Image height={200} width={200} />
       </div> */}
       <div className={classes.details} style={{direction: 'rtl'}}>
-        <Image classes={classes.image} height={desktop ? 400 : '60vw'} width={desktop ? 300 : '60vw'} src={instructorPic} />
-        <div>
+        {/* <Image classes={classes.image} height={desktop ? 400 : '60vw'} width={desktop ? 300 : '60vw'} src={instructorPic} /> */}
+        <Avatar alt="Ron Ramball" src={instructorPic} style={{width: desktop ? '20vw' : '60vw', height: desktop ? '20vw' : '60vw'}} />
+        <div className={classes.text}>
           <Typography variant="h3">
             {`על היוצר`}
           </Typography>
-          <Typography variant="h4">
-            {`שמח שהגעתם הנה,`}
-          </Typography>
-          <Typography variant="h5">
-            {`אני סתיו המנחה והיוצר של הקורס קצת על חיי האישיים שתכירו אותי.`}
-            <br />
-            {`גדלתי בתל אביב כיום מתגורר ביפו עוד אין לי בנים ולא בנות, הקורס הזה זה ועוד הרבה פרוייקטים אלו הילדים שלי.`}
-            <br />
-            {`שנים שאני מפיק אירועים מסיבות ופסטיבלים וחלק מההפקה DAG.`}
-            <br />
-            {`אני כבר אחרי הרבה שנים של ניגון באירועים ויצירת אירועים.`}
-            <br />
-            {`מכיר את סצנת המסיבות היטב גם מבחוץ כבליין וגם מבפנים כמפיק ודיג'יי.`}
-            <br />
-            {`היום מעבר להיותי דייגי ומפיק אירועים אני גם לומד מיינדפולנס ובתהליך יצירת סרט.`}
-            <br />
-            {`את הרעיון לקורס קיבלתי אחרי זמן מה שהבנתי שהרבה אנשים מהסביבה שלי אוהבים מוזיקה ורוצים לדעת לתקלט ולבטא את האהבה שלהם לסאונד ומעוניינים העביר אנשים חוויה דרך העולם המוזיקלי שלהם.`}
-            <br />
-            {`זיהיתי שלרובם המסגרות שכרגע מוצעות לא מתאימות להם.`}
-            <br />
-            {`חסר להם הליווי, היחס האישי והתכלס שבדבר!`}
-            <br />
-            {`הבנתי שלי יש את הידע והמון מה לתת וגם את הרצון ללוות אנשים בתחילת דרכם בעולם התקלוט.`}
-            <br />
-            {`אני יודע הצעדים הראשונים הם הצעדים שבהם עושים הכי הרבה טעויות ואני פה כדי שכולם יתחילו ברגל ימין את הדרך שלהם.`}
-            <br />
-          </Typography>
-          
+          <div style={{textAlign: 'right'}}>
+            <Typography variant="h4">
+              {`שמח שהגעתם הנה,`}
+            </Typography>
+            <Typography style={{lineHeight: '150%'}} variant="h5">
+              {`אני סתיו המנחה והיוצר של הקורס קצת על חיי האישיים שתכירו אותי.`}
+              <br />
+              {`גדלתי בתל אביב כיום מתגורר ביפו עוד אין לי בנים ולא בנות, הקורס הזה זה ועוד הרבה פרוייקטים אלו הילדים שלי.`}
+              <br />
+              {`שנים שאני מפיק אירועים מסיבות ופסטיבלים וחלק מההפקה DAG.`}
+              <br />
+              {`אני כבר אחרי הרבה שנים של ניגון באירועים ויצירת אירועים.`}
+              <br />
+              {`מכיר את סצנת המסיבות היטב גם מבחוץ כבליין וגם מבפנים כמפיק ודיג'יי.`}
+              <br />
+              {`היום מעבר להיותי דייגי ומפיק אירועים אני גם לומד מיינדפולנס ובתהליך יצירת סרט.`}
+              <br />
+              {`את הרעיון לקורס קיבלתי אחרי זמן מה שהבנתי שהרבה אנשים מהסביבה שלי אוהבים מוזיקה ורוצים לדעת לתקלט ולבטא את האהבה שלהם לסאונד ומעוניינים העביר אנשים חוויה דרך העולם המוזיקלי שלהם.`}
+              <br />
+              {`זיהיתי שלרובם המסגרות שכרגע מוצעות לא מתאימות להם.`}
+              <br />
+              {`חסר להם הליווי, היחס האישי והתכלס שבדבר!`}
+              <br />
+              {`הבנתי שלי יש את הידע והמון מה לתת וגם את הרצון ללוות אנשים בתחילת דרכם בעולם התקלוט.`}
+              <br />
+              {`אני יודע הצעדים הראשונים הם הצעדים שבהם עושים הכי הרבה טעויות ואני פה כדי שכולם יתחילו ברגל ימין את הדרך שלהם.`}
+              <br />
+            </Typography>
+            
+          </div>
         </div>
       </div>
     </div>
