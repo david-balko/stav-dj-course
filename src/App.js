@@ -53,14 +53,12 @@ const aran500 = {
  };
 
 const theme = createMuiTheme({
-  // palette: {
-  //   primary: {
-  //     // main: purple[500],
-  //   },
-  //   secondary: {
-  //     // main: green[500],
-  //   },
-  // },
+  palette: {
+    primary: {
+      main: '#E55812',
+    },
+    
+  },
   breakpoints: {
     values: {
       xs: 0,

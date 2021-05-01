@@ -14,8 +14,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     // height: '100%',
     position: 'relative',
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
     marginBottom: theme.spacing(15),
     // backgroundSize: 'cover',
     // backgroundAttachment: 'fixed',
@@ -24,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 30,
+    padding: theme.spacing(2),
     // padding: theme.spacing(2),
     flexDirection: 'column-reverse',
     [theme.breakpoints.down('sm')]: {
@@ -63,8 +62,9 @@ const useStyles = makeStyles(theme => ({
     width: '50vw',
     marginRight: 'auto',
     [theme.breakpoints.down('sm')]: {
-      width: '80vw',
-      marginTop: '15vh'
+      width: '90vw',
+      margin: 'initial',
+      marginTop: '15vh',
     },
     color: 'white',
     // overflow: 'hidden'
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     // width: '50vw',
     // marginLeft: 'auto',
     // marginLeft: -21,
-    paddingLeft: theme.spacing(2)
+    
     // [theme.breakpoints.down('sm')]: {
     //   width: '80vw'
     // },
@@ -192,7 +192,13 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'right',
     '& > *': {
       margin: theme.spacing(1)
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: 'auto',
+      '& > :first-child': {
+        textAlign: 'center'
+      },
+    },
   }
 }))
 
@@ -225,16 +231,138 @@ export const Syllabus = inject()(observer((props) => {
                   {`בכל מפגש יהיה חלק מעשי! למה? כי אין כמו להתנסות בעצמנו`}
                 </Typography>
 
-                <div className={classes.lessons}>
+                {desktop ?
+                  <div className={classes.lessons}>
 
 
-                  <div className={classes.lessonsRow}>
 
+                    <div className={classes.lessonsRow}>
+
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור ראשון`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- המנוע הפנימי שלי לעולם התקלוט`}
+                          <br />
+                          {`- סקירה של הציוד`}
+                          <br />
+                          {`- מיקס ראשון Crossfader`}
+                        </Typography>
+                      </div>
+
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור חמישי`}
+                        </Typography>
+                        <Typography style={{ lineHeight: '150%' }} variant={desktop ? 'h5' : 'h6'}>
+                          {`- לופים`}
+                          <br />
+                          {`- הוט קיוז Hot cues`}
+                          <br />
+                          {`- אפקט חדש לאוסף Transformer`}
+                        </Typography>
+                      </div>
+                    </div>
+                    <div className={classes.lessonsRow}>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שני`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- מה זה bpm? לומדים לספור פעימות`}
+                          <br />
+                          {`- סדר וארגון בתוכנה ובמחשב`}
+                          <br />
+                          {`- איך משיגים מוזיקה חדשה`}
+                          <br />
+                          {`- שמיעה באוזניות`}
+                        </Typography>
+                      </div>
+
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שישי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- סוגי סטים`}
+                          <br />
+                          {`- איך בונים סט`}
+                          <br />
+                          {`- דאבל דרופינג double Dropping`}
+                        </Typography>
+                      </div>
+
+                    </div>
+
+                    <div className={classes.lessonsRow}>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שלישי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- מבנה של שיר`}
+                          <br />
+                          {`- סולם מוזיקלי טיפונת על הרמוניה`}
+                          <br />
+                          {`- קאט מיקס cut mix`}
+                          <br />
+                          {`- מתחילים ללמוד אפקטים הראשון Echo`}
+                        </Typography>
+                      </div>
+
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שביעי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- השילוש הקדוש די'גיי קהל אווירה`}
+                          <br />
+                          {`- עמידה מול קהל`}
+                          <br />
+                          {`- מה עושים כשמגיעים לעמדה??`}
+                          <br />
+                          {`- יצירת עלייה עם לופ.`}
+                        </Typography>
+                      </div>
+
+                    </div>
+
+                    <div className={classes.lessonsRow}>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור רביעי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- איקולייזר`}
+                          <br />
+                          {`- ביט מיקס beat mix`}
+                          <br />
+                          {`- מתחילים ללמוד אפקטים לעומק, הפעם Reverb`}
+                        </Typography>
+                      </div>
+
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שמיני`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- התקלוט הראשון שלכם!`}
+                          <br />
+                          {`- אירוע לכל החברים שבו כל אחד מנגן סט של חצי שעה!`}
+                          <br />
+                          {`- סיכום שיתוף חוויות ומה עושים מפה.`}
+                        </Typography>
+                      </div>
+                    </div>
+                  </div>
+                  :
+                  <div className={classes.lessons}>
                     <div className={classes.lesson}>
                       <Typography variant="h4">
                         {`שיעור ראשון`}
                       </Typography>
-                      <Typography variant="h5">
+                      <Typography variant={desktop ? 'h5' : 'h6'}>
                         {`- המנוע הפנימי שלי לעולם התקלוט`}
                         <br />
                         {`- סקירה של הציוד`}
@@ -242,26 +370,11 @@ export const Syllabus = inject()(observer((props) => {
                         {`- מיקס ראשון Crossfader`}
                       </Typography>
                     </div>
-
-                    <div className={classes.lesson}>
-                      <Typography variant="h4">
-                        {`שיעור חמישי`}
-                      </Typography>
-                      <Typography variant="h5">
-                        {`- לופים`}
-                        <br />
-                        {`- הוט קיוז Hot cues`}
-                        <br />
-                        {`- אפקט חדש לאוסף Transformer`}
-                      </Typography>
-                    </div>
-                  </div>
-                  <div className={classes.lessonsRow}>
                     <div className={classes.lesson}>
                       <Typography variant="h4">
                         {`שיעור שני`}
                       </Typography>
-                      <Typography variant="h5">
+                      <Typography variant={desktop ? 'h5' : 'h6'}>
                         {`- מה זה bpm? לומדים לספור פעימות`}
                         <br />
                         {`- סדר וארגון בתוכנה ובמחשב`}
@@ -271,28 +384,11 @@ export const Syllabus = inject()(observer((props) => {
                         {`- שמיעה באוזניות`}
                       </Typography>
                     </div>
-
-                    <div className={classes.lesson}>
-                      <Typography variant="h4">
-                        {`שיעור שישי`}
-                      </Typography>
-                      <Typography variant="h5">
-                        {`- סוגי סטים`}
-                        <br />
-                        {`- איך בונים סט`}
-                        <br />
-                        {`- דאבל דרופינג double Dropping`}
-                      </Typography>
-                    </div>
-
-                  </div>
-
-                  <div className={classes.lessonsRow}>
                     <div className={classes.lesson}>
                       <Typography variant="h4">
                         {`שיעור שלישי`}
                       </Typography>
-                      <Typography variant="h5">
+                      <Typography variant={desktop ? 'h5' : 'h6'}>
                         {`- מבנה של שיר`}
                         <br />
                         {`- סולם מוזיקלי טיפונת על הרמוניה`}
@@ -302,52 +398,71 @@ export const Syllabus = inject()(observer((props) => {
                         {`- מתחילים ללמוד אפקטים הראשון Echo`}
                       </Typography>
                     </div>
-
                     <div className={classes.lesson}>
-                      <Typography variant="h4">
-                        {`שיעור שביעי`}
-                      </Typography>
-                      <Typography variant="h5">
-                        {`- השילוש הקדוש די'גיי קהל אווירה`}
-                        <br />
-                        {`- עמידה מול קהל`}
-                        <br />
-                        {`- מה עושים כשמגיעים לעמדה??`}
-                        <br />
-                        {`- יצירת עלייה עם לופ.`}
-                      </Typography>
-                    </div>
+                        <Typography variant="h4">
+                          {`שיעור רביעי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- איקולייזר`}
+                          <br />
+                          {`- ביט מיקס beat mix`}
+                          <br />
+                          {`- מתחילים ללמוד אפקטים לעומק, הפעם Reverb`}
+                        </Typography>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור חמישי`}
+                        </Typography>
+                        <Typography style={{ lineHeight: '150%' }} variant={desktop ? 'h5' : 'h6'}>
+                          {`- לופים`}
+                          <br />
+                          {`- הוט קיוז Hot cues`}
+                          <br />
+                          {`- אפקט חדש לאוסף Transformer`}
+                        </Typography>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שישי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- סוגי סטים`}
+                          <br />
+                          {`- איך בונים סט`}
+                          <br />
+                          {`- דאבל דרופינג double Dropping`}
+                        </Typography>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שביעי`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- השילוש הקדוש די'גיי קהל אווירה`}
+                          <br />
+                          {`- עמידה מול קהל`}
+                          <br />
+                          {`- מה עושים כשמגיעים לעמדה??`}
+                          <br />
+                          {`- יצירת עלייה עם לופ.`}
+                        </Typography>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography variant="h4">
+                          {`שיעור שמיני`}
+                        </Typography>
+                        <Typography variant={desktop ? 'h5' : 'h6'}>
+                          {`- התקלוט הראשון שלכם!`}
+                          <br />
+                          {`- אירוע לכל החברים שבו כל אחד מנגן סט של חצי שעה!`}
+                          <br />
+                          {`- סיכום שיתוף חוויות ומה עושים מפה.`}
+                        </Typography>
+                      </div>
 
                   </div>
-
-                  <div className={classes.lessonsRow}>
-                    <div className={classes.lesson}>
-                      <Typography variant="h4">
-                        {`שיעור רביעי`}
-                      </Typography>
-                      <Typography variant="h5">
-                        {`- איקולייזר`}
-                        <br />
-                        {`- ביט מיקס beat mix`}
-                        <br />
-                        {`- מתחילים ללמוד אפקטים לעומק, הפעם Reverb`}
-                      </Typography>
-                    </div>
-
-                    <div className={classes.lesson}>
-                      <Typography variant="h4">
-                        {`שיעור שמיני`}
-                      </Typography>
-                      <Typography variant="h5">
-                        {`- התקלוט הראשון שלכם!`}
-                        <br />
-                        {`- אירוע לכל החברים שבו כל אחד מנגן סט של חצי שעה!`}
-                        <br />
-                        {`- סיכום שיתוף חוויות ומה עושים מפה.`}
-                      </Typography>
-                    </div>
-                  </div>
-                </div>
+                }
               </div>
             </LazyLoad>
           </div>

@@ -95,6 +95,11 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       width: '70vw',
     },
+  },
+  button: {
+    fontSize: 25,
+    direction: 'rtl',
+    boxShadow: `0 0 20px #e55812`
   }
 }))
 
@@ -141,7 +146,7 @@ export const Welcome = inject()(observer((props) =>  {
             <Typography style={{ direction: 'rtl' }} variant="h4" paragraph>
             לקורס התקלוט שבו החלום הופך למציאות.<br/>יחס אישי למידה בקבוצות קטנות באולפן מקצועי באווירה שמחה וחברית.
           </Typography>
-          <Button size="large" onClick={scrollToContact} variant="contained" style={{fontSize: 25, direction: 'rtl' }}>דברו איתי</Button>
+          <Button color="primary" size="large" onClick={scrollToContact} variant="contained" className={classes.button}>דברו איתי</Button>
         </div>
       </div>
     </div>

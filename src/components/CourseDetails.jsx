@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 30,
+    padding: theme.spacing(2),
     // padding: theme.spacing(2),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
@@ -60,8 +61,9 @@ const useStyles = makeStyles(theme => ({
     width: '50vw',
     marginLeft: 'auto',
     [theme.breakpoints.down('sm')]: {
-      width: '80vw',
-      marginTop: '15vh'
+      width: '90vw',
+      margin: 'initial',
+      marginTop: '15vh',
     },
     color: 'white',
     // overflow: 'hidden'
@@ -70,7 +72,7 @@ const useStyles = makeStyles(theme => ({
     // width: '50vw',
     // marginLeft: 'auto',
     // marginRight: -21,
-    paddingRight: theme.spacing(2),
+    // paddingRight: theme.spacing(2),
     
     // [theme.breakpoints.down('sm')]: {
     //   width: '80vw'
@@ -81,7 +83,7 @@ const useStyles = makeStyles(theme => ({
   details: {
     position: 'relative',
     zIndex: 2,
-    backgroundColor: 'rgb(94, 212, 200, 0.6)',
+    backgroundColor: 'rgb(62, 204, 189, 0.8)',
     backdropFilter: 'blur(5px)',
     // border: '1px solid #6A040F',
     borderRadius: 8,
