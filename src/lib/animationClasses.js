@@ -188,5 +188,6 @@ export class Particles {
 
   update(mouseParticle) {
     this.particles.forEach(p => p.update(this.ctx, this.ratio, [...this.particles, mouseParticle]))
+    mouseParticle.update(this.ctx, this.ratio, [...this.particles, mouseParticle])
   }
 }

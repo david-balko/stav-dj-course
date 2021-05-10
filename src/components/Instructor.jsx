@@ -50,7 +50,9 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(2)
     },
     [theme.breakpoints.down('sm')]: {
-      width: '90vw'
+      width: '90vw',
+      padding: 0,
+      
     }
     // color: '#faa307'
   },

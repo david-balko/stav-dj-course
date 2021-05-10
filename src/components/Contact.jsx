@@ -1,6 +1,8 @@
-import { makeStyles, Typography, Button, InputBase, Paper, useTheme, useMediaQuery } from "@material-ui/core";
+import { makeStyles, Typography, Button, InputBase, Paper, useTheme, useMediaQuery, Snackbar, IconButton } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
+import { useState } from "react";
 import contactBackground from '../assets/contact-background.jpg'
+import CloseIcon from '@material-ui/icons/Close';
 
 const useStyles = makeStyles(theme => ({
   contact: {
@@ -35,6 +37,9 @@ const useStyles = makeStyles(theme => ({
     direction: 'rtl',
     display: 'flex',
     flexDirection: 'row',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    },
     // alignItems: 'center',
   },
   cycles: {
@@ -46,13 +51,19 @@ const useStyles = makeStyles(theme => ({
   },
   cyclesAndPrice: {
     width: '30%',
-    textAlign: 'right'
+    textAlign: 'right',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
   contactMe: {
     width: '35%',
     textAlign: 'right',
     '& > *': {
       margin: theme.spacing(4),
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
     },
   },
   form: {
@@ -64,7 +75,8 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(4),
     },
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column'
+      flexDirection: 'column',
+      width: '100%'
     },
     width: '35%'
   },
@@ -82,6 +94,17 @@ const useStyles = makeStyles(theme => ({
     fontSize: 25,
     direction: 'rtl',
     boxShadow: `0 0 20px #e55812`
+  },
+  price: {
+    alignSelf: 'flex-start',
+    [theme.breakpoints.down('sm')]: {
+      alignSelf: 'center',
+      textAlign: 'center'
+    },
+  },
+  snackbar: {
+    direction: 'rtl',
+    
   }
 
 }))
@@ -90,6 +113,16 @@ export const Contact = inject()(observer((props) =>  {
 
   const theme = useTheme()
   const desktop = useMediaQuery(theme.breakpoints.up('sm'))
+
+  const [snackbar, setSnackbar] = useState(false)
+
+  const sendUserInfo = () => {
+    setSnackbar(true)
+  }
+
+  const handleClose = () => {
+    setSnackbar(false)
+  }
 
   const classes = useStyles()
 
@@ -122,24 +155,24 @@ export const Contact = inject()(observer((props) =>  {
               <Typography variant="h6">{`ד' 5.5`}</Typography>
             </div>
           </div>
-          <div style={{alignSelf: 'flex-start'}}>
-            <Typography paragrapgh variant="h4">{`עלות הקורס: 2000 ש"ח`}</Typography>
+          <div className={classes.price}>
+            <Typography variant={desktop ? "h4" : "h5"}>{`עלות הקורס: 2000 ש"ח`}</Typography>
           </div>
         </div>
         
         <div className={classes.contactMe}>
-          <Typography variant="h4">
+          <Typography variant={desktop ? "h4" : "h5"}>
             {`מוזמנים ליצור איתי קשר לגבי כל התייעצות גם אם מרגישה לכם קטנה, אני זמין עבורכם ופה בשבילכם כבר מהשלבים של ההתלבטויות הראשונות.`}
           </Typography>
-          <Typography variant="h4">
+          <Typography variant={desktop ? "h4" : "h5"}>
             {`באימייל: RonRambell@gmail.com`}
           </Typography>
-          <Typography variant="h4">
+          <Typography variant={desktop ? "h4" : "h5"}>
             {`או בטלפון: 0502277684`}
           </Typography>
         </div>
         <div className={classes.form}>
-        <Typography variant="h4">
+        <Typography variant={desktop ? "h4" : "h5"}>
             {`או שתשאירו פרטים ואני אחזור אליכם`}
           </Typography>
           <div className={classes.inputs}>
@@ -152,12 +185,26 @@ export const Contact = inject()(observer((props) =>  {
             <Paper style={{padding: 5}}>
               <InputBase variant="outlined" placeholder="טלפון" />
             </Paper>
-            <Button color="primary" size="large" className={classes.button} variant="contained">שלח</Button>
+            <Button onClick={sendUserInfo} color="primary" size="large" className={classes.button} variant="contained">שלח</Button>
           </div>
         </div>
 
         
       </div>
+      <Snackbar
+        className={classes.snackbar}
+        open={snackbar}
+        autoHideDuration={4000}
+        onClose={handleClose}
+        message="הפרטים נשלחו, תודה! :)"
+        // action={
+        //   <>
+        //     <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+        //       <CloseIcon fontSize="small" />
+        //     </IconButton>
+        //   </>
+        // }
+      />
     </div>
   )
 }))

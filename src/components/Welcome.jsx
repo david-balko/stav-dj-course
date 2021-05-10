@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'column',
       justifyContent: 'space-around',
       // height: 800,
-      height: '125vh',
+      // minHeight: '125vh',
+      height: 'auto'
     },
     // '&::before': {
     //   content: '""',
@@ -126,6 +127,12 @@ export const Welcome = inject()(observer((props) =>  {
       behavior: 'smooth',
       block: 'start',
     })
+    setTimeout(() => {
+      document.getElementById('contact').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }, 750)
   }
 
   const classes = useStyles()
@@ -133,7 +140,7 @@ export const Welcome = inject()(observer((props) =>  {
   return (
     <div className={classes.welcome}>
       <div className={classes.image}>
-          <img className={classes.imageImg} src={desktop ? profilePicLay : profilePic} alt="ron rambell" /> :
+          <img className={classes.imageImg} src={desktop ? profilePicLay : profilePic} alt="ron rambell" />
       </div>
 
       <div className={classes.container}>

@@ -46,7 +46,7 @@ export const Background2 = inject()(observer((props) =>  {
     canvas.style.width = `${width}px`;
     canvas.style.height = `${height}px`;
 
-    let mouseParticle = new Particle(0, 0, 0, 0, 30, 'rgba(255, 0, 0, 1)')
+    let mouseParticle = new Particle(0, 0, 0, 0, 30, 'rgba(255, 255, 255, 0)')
     let particles = new Particles(13, ctx, width, height, mouseParticle)
 
 
@@ -75,13 +75,32 @@ export const Background2 = inject()(observer((props) =>  {
 
 
     const mouseMove = (e) => {
-      mouseParticle.x = e.clientX
-      mouseParticle.y = e.clientY
+      mouseParticle.x = e.clientX * ratio
+      mouseParticle.y = e.clientY * ratio
       mouseParticle.velocity.x = e.movementX > 5 ? 5 : e.movementX < -5 ? -5 : e.movementX
       mouseParticle.velocity.y = e.movementY > 5 ? 5 : e.movementY < -5 ? -5 : e.movementY
     }
 
     window.addEventListener('mousemove', mouseMove)
+
+    const touchMove = (e) => {
+      const touch = e.touches[0];
+
+      if (mouseParticle.velocity.x !== 0 && mouseParticle.velocity.y !== 0) {
+          // be aware that these only store the movement of the first touch in the touches array
+          e.movementX = (touch.clientX * ratio) - mouseParticle.x
+          e.movementY = (touch.clientY * ratio) - mouseParticle.y
+      } else {
+        mouseParticle.velocity.x = 1
+        mouseParticle.velocity.y = 1
+      }
+      mouseParticle.x = touch.clientX * ratio
+      mouseParticle.y = touch.clientY * ratio
+      mouseParticle.velocity.x = e.movementX > 5 ? 5 : e.movementX < -5 ? -5 : e.movementX
+      mouseParticle.velocity.y = e.movementY > 5 ? 5 : e.movementY < -5 ? -5 : e.movementY
+    }
+
+    window.addEventListener('touchmove', touchMove)
 
     const onScroll = (e) => {
       // console.log(window.scrollY)
