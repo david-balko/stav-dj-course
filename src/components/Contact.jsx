@@ -42,6 +42,12 @@ const useStyles = makeStyles(theme => ({
     },
     // alignItems: 'center',
   },
+  cycleRow: {
+    display: 'flex',
+    '& > *:first-child': {
+      marginLeft: theme.spacing(2)
+    }
+  },
   cycles: {
     display: 'flex',
     flexDirection: 'row',
@@ -134,46 +140,47 @@ export const Contact = inject()(observer((props) =>  {
           <div className={classes.cycles}>
             <div>
               <Typography variant="h4">{`מחזור #1`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{`ג' 03.08`}</Typography>
+                <Typography variant="h6">{`ג' 10.08`}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{`ג' 17.08`}</Typography>
+                <Typography variant="h6">{`ג' 24.08`}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{`ג' 31.08`}</Typography>
+                <Typography variant="h6">{`ג' 14.09`}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{`ג' 05.10`}</Typography>
+                <Typography variant="h6">{`ג' 12.10`}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{`ג׳ 19.10`}</Typography>
+                <Typography variant="h6">{`ג' 26.10`}</Typography>
+              </div>
             </div>
-            <div>
+            {/* <div>
               <Typography variant="h4">{`מחזור #2`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-              <Typography variant="h6">{`ד' 5.5`}</Typography>
-            </div>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+              <Typography variant="h6">{`ג' 5.5`}</Typography>
+            </div> */}
           </div>
           <div className={classes.price}>
-            <Typography variant={desktop ? "h4" : "h5"}>{`עלות הקורס: 2000 ש"ח`}</Typography>
+            <Typography variant={desktop ? "h4" : "h5"}>{`באופן חד פעמי בזמן הפיילוט עלות הקורס 2000 שקלים.`}</Typography>
           </div>
         </div>
         
-        <div className={classes.contactMe}>
-          <Typography variant={desktop ? "h4" : "h5"}>
-            {`מוזמנים ליצור איתי קשר לגבי כל התייעצות גם אם מרגישה לכם קטנה, אני זמין עבורכם ופה בשבילכם כבר מהשלבים של ההתלבטויות הראשונות.`}
-          </Typography>
-          <Typography variant={desktop ? "h4" : "h5"}>
-            {`באימייל: RonRambell@gmail.com`}
-          </Typography>
-          <Typography variant={desktop ? "h4" : "h5"}>
-            {`או בטלפון: 0502277684`}
-          </Typography>
-        </div>
         <div className={classes.form}>
-        <Typography variant={desktop ? "h4" : "h5"}>
-            {`או שתשאירו פרטים ואני אחזור אליכם`}
+          <Typography variant={desktop ? "h4" : "h5"}>
+            {`כבר מההתלבטויות הראשונות שלך אני איתך פשוט דברו איתי.`}
           </Typography>
           <div className={classes.inputs}>
             <Paper style={{padding: 5}}>
@@ -187,6 +194,17 @@ export const Contact = inject()(observer((props) =>  {
             </Paper>
             <Button onClick={sendUserInfo} color="primary" size="large" className={classes.button} variant="contained">שלח</Button>
           </div>
+        </div>
+        <div className={classes.contactMe}>
+          <Typography variant={desktop ? "h4" : "h5"}>
+            {`גם כאן אפשר:`}
+          </Typography>
+          <Typography variant={desktop ? "h4" : "h5"}>
+            {`RonRambell@gmail.com`}
+          </Typography>
+          <Typography variant={desktop ? "h4" : "h5"}>
+            {`0502277684`}
+          </Typography>
         </div>
 
         

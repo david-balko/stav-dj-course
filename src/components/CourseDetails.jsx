@@ -1,4 +1,4 @@
-import { makeStyles, div, Typography, useTheme, useMediaQuery, Divider } from "@material-ui/core";
+import { makeStyles, div, Typography, useTheme, useMediaQuery, Divider, List, ListItem, ListItemText } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
 import { useEffect, useRef } from "react";
 import LazyLoad from "react-lazyload";
@@ -123,6 +123,15 @@ const useStyles = makeStyles(theme => ({
     }
     // animationDelay: '-0.75s',
   },
+  list: {
+    margin: 0,
+    marginRight: theme.spacing(4),
+    padding: 0,
+    fontWeight: 400,
+    fontSize: "1.5rem",
+    lineHeight: 1.334,
+    letterSpacing: "0em",
+  },
   "@keyframes textEnter": {
     "0%": {
       opacity: 0,
@@ -207,7 +216,9 @@ export const CourseDetails = inject()(observer((props) =>  {
                 <hr />
               </div>
               <Typography variant="h5">
-                {`הקורס יתרחש באולפני השטוביה, שם יהיה לנו חדר גדול מקצועי ומטופל אקוסטית להפקה מוזיקלית שיהווה לנו בית נעים ונינוח למשך הקורס.`}
+                {`הקורס מתרחש באולפני הצוללת באולפן מקצועי ומטופל אקוסטית, אולפני הצוללת פועלים כבר עשרים שנה וזה מקום שברגע שנכנסים מרגישים את ההיסטוריה המוזיקלית שעברה בו.`}
+                <br/>
+                {`רחוב יוסף קארו 18.`}
               </Typography>
               <Typography variant="h4">
                 {`למי מיועד הקורס?`}
@@ -215,9 +226,18 @@ export const CourseDetails = inject()(observer((props) =>  {
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr />
               </div>
-              <Typography variant="h5">
-                {`הקורס מתאים לכולם! אין צורך בידע קודם. הוא מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית לייב מול קהל.`}
-              </Typography>
+              <ul className={classes.list}>
+                <li >
+                  <Typography variant="h5">
+                    {`הקורס מתאים לכולם! אין צורך בידע קודם.`}
+                  </Typography>
+                </li>
+                <li>
+                  <Typography variant="h5">
+                    {`הוא מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית לייב מול קהל.`}
+                  </Typography>
+                </li>
+              </ul>
               <Typography variant="h4">
                 {`איזה ציוד צריך?`}
               </Typography>
