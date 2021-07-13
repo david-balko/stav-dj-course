@@ -1,8 +1,13 @@
 import { makeStyles, Typography, Button, InputBase, Paper, useTheme, useMediaQuery, Snackbar, IconButton } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
 import { useState } from "react";
+import emailjs from 'emailjs-com';
+import validator from "validator";
 import contactBackground from '../assets/contact-background.jpg'
 import CloseIcon from '@material-ui/icons/Close';
+
+import{ init } from 'emailjs-com';
+init("user_Yot4vNSw7IyITx5P1TaGG");
 
 const useStyles = makeStyles(theme => ({
   contact: {
@@ -63,6 +68,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   contactMe: {
+    marginRight: theme.spacing(2),
     width: '35%',
     textAlign: 'right',
     '& > *': {
@@ -102,6 +108,7 @@ const useStyles = makeStyles(theme => ({
     boxShadow: `0 0 20px #e55812`
   },
   price: {
+    width: "90%",
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
       alignSelf: 'center',
@@ -120,10 +127,40 @@ export const Contact = inject()(observer((props) =>  {
   const theme = useTheme()
   const desktop = useMediaQuery(theme.breakpoints.up('sm'))
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [content, setContent] = useState('')
+
   const [snackbar, setSnackbar] = useState(false)
+  const [snackbarMessage, setSnackbarMessage] = useState('')
+
 
   const sendUserInfo = () => {
-    setSnackbar(true)
+    try {
+      if (email === '' || name === '' || phone === '') {
+        setSnackbarMessage('אנא הכניסו את האימייל, השם והטלפון שלכם')
+        setSnackbar(true)
+        return
+      }
+      if (!validator.isEmail(email)) {
+        setSnackbarMessage('אנא וודאו שכתובת המייל תקינה')
+        setSnackbar(true)
+        return
+      }
+      emailjs.send("service_yid1b4o","template_d003zyi",{
+        email,
+        name,
+        phone,
+        content,
+        });
+      setSnackbarMessage('הפרטים נשלחו בהצלחה!')
+      setSnackbar(true)
+    }
+    catch {
+      setSnackbarMessage('משהו השתבש, אנא נסו שנית מאוחר יותר')
+      setSnackbar(true)
+    }
   }
 
   const handleClose = () => {
@@ -184,13 +221,16 @@ export const Contact = inject()(observer((props) =>  {
           </Typography>
           <div className={classes.inputs}>
             <Paper style={{padding: 5}}>
-              <InputBase variant="outlined" placeholder="שם" />
+              <InputBase value={name} onChange={({ target }) => setName(target.value)} variant="outlined" placeholder="שם" />
             </Paper>
             <Paper style={{padding: 5}}>
-              <InputBase variant="outlined" placeholder="אימייל" />
+              <InputBase value={email} onChange={({ target }) => setEmail(target.value)} variant="outlined" placeholder="אימייל" />
             </Paper>
             <Paper style={{padding: 5}}>
-              <InputBase variant="outlined" placeholder="טלפון" />
+              <InputBase value={phone} onChange={({ target }) => setPhone(target.value)} variant="outlined" placeholder="טלפון" />
+            </Paper>
+            <Paper style={{padding: 5}}>
+              <InputBase value={content} onChange={({ target }) => setContent(target.value)} multiline={true} rows={3} variant="outlined" placeholder="קצת על עצמכם" />
             </Paper>
             <Button onClick={sendUserInfo} color="primary" size="large" className={classes.button} variant="contained">שלח</Button>
           </div>
@@ -214,14 +254,7 @@ export const Contact = inject()(observer((props) =>  {
         open={snackbar}
         autoHideDuration={4000}
         onClose={handleClose}
-        message="הפרטים נשלחו, תודה! :)"
-        // action={
-        //   <>
-        //     <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
-        //       <CloseIcon fontSize="small" />
-        //     </IconButton>
-        //   </>
-        // }
+        message={snackbarMessage}
       />
     </div>
   )
