@@ -5,8 +5,8 @@ import emailjs from 'emailjs-com';
 import validator from "validator";
 import contactBackground from '../assets/contact-background.jpg'
 import CloseIcon from '@material-ui/icons/Close';
-
 import{ init } from 'emailjs-com';
+
 init("user_Yot4vNSw7IyITx5P1TaGG");
 
 const useStyles = makeStyles(theme => ({
@@ -49,9 +49,13 @@ const useStyles = makeStyles(theme => ({
   },
   cycleRow: {
     display: 'flex',
+    justifyContent: 'space-around',
     '& > *:first-child': {
       marginLeft: theme.spacing(2)
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
   },
   cycles: {
     display: 'flex',
@@ -59,12 +63,19 @@ const useStyles = makeStyles(theme => ({
     '& > *': {
       margin: theme.spacing(4),
     },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      '& > *': {
+        marginBottom: theme.spacing(2),
+      },
+    },
   },
   cyclesAndPrice: {
     width: '30%',
     textAlign: 'right',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
+      textAlign: 'center',
     },
   },
   contactMe: {
@@ -76,6 +87,12 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('sm')]: {
       width: '100%',
+      textAlign: 'center',
+      marginRight: 0,
+      '& > *': {
+        marginLeft: 0,
+        marginRight: 0
+      },
     },
   },
   form: {
@@ -88,7 +105,11 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      width: '100%'
+      width: '100%',
+      '& > :first-child': {
+        marginTop: theme.spacing(6),
+        marginBottom: theme.spacing(2)
+      },
     },
     width: '35%'
   },
@@ -105,14 +126,20 @@ const useStyles = makeStyles(theme => ({
   button: {
     fontSize: 25,
     direction: 'rtl',
-    boxShadow: `0 0 20px #e55812`
+    boxShadow: `0 0 10px #e55812`
   },
   price: {
     width: "90%",
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
+      width: "100%",
       alignSelf: 'center',
       textAlign: 'center'
+    },
+  },
+  cycleHeader: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(2)
     },
   },
   snackbar: {
@@ -171,12 +198,12 @@ export const Contact = inject()(observer((props) =>  {
 
   return (
     <div id="contact" className={classes.contact}>
-      <Typography variant="h3">{`בקיצור,`}</Typography>
+      <Typography variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>
       <div className={classes.text}>
         <div className={classes.cyclesAndPrice}>
           <div className={classes.cycles}>
             <div>
-              <Typography variant="h4">{`מחזור #1`}</Typography>
+              <Typography className={classes.cycleHeader} variant={desktop ? "h4" : "h5"}>{`מחזור #1`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{`ג' 03.08`}</Typography>
                 <Typography variant="h6">{`ג' 10.08`}</Typography>
@@ -211,13 +238,13 @@ export const Contact = inject()(observer((props) =>  {
             </div> */}
           </div>
           <div className={classes.price}>
-            <Typography variant={desktop ? "h4" : "h5"}>{`באופן חד פעמי בזמן הפיילוט עלות הקורס 2000 שקלים.`}</Typography>
+            <Typography variant={desktop ? "h4" : "h5"}>{`עלות הקורס 2000 ש״ח לעשרה מפגשים`}</Typography>
           </div>
         </div>
         
         <div className={classes.form}>
           <Typography variant={desktop ? "h4" : "h5"}>
-            {`כבר מההתלבטויות הראשונות שלך אני איתך פשוט דברו איתי.`}
+            {`לקביעת מפגש התאמה`}
           </Typography>
           <div className={classes.inputs}>
             <Paper style={{padding: 5}}>
@@ -237,7 +264,7 @@ export const Contact = inject()(observer((props) =>  {
         </div>
         <div className={classes.contactMe}>
           <Typography variant={desktop ? "h4" : "h5"}>
-            {`גם כאן אפשר:`}
+            {`אפשר גם כאן:`}
           </Typography>
           <Typography variant={desktop ? "h4" : "h5"}>
             {`RonRambell@gmail.com`}

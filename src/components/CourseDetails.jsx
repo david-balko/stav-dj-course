@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
+      padding: theme.spacing(),
       // height: 800,
       
     },
@@ -132,6 +133,12 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 1.334,
     letterSpacing: "0em",
   },
+  header: {
+    color: '#EAE0CC',
+  },
+  headerBorder: {
+    borderTop: '1px solid #EAE0CC'
+  },
   "@keyframes textEnter": {
     "0%": {
       opacity: 0,
@@ -197,13 +204,24 @@ export const CourseDetails = inject()(observer((props) =>  {
         <div className={classes.detailsContainer}>
           <LazyLoad className={classes.courseDetail} >
             <div className={classes.details} style={{direction: 'rtl'}}>
-              <Typography variant="h3">
+              <Typography className={classes.header} variant={desktop ? "h3" : "h4"}>
                 {`על הקורס`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
-                <hr />
+                <hr className={classes.headerBorder} />
               </div>
-              <ul className={classes.list}>
+              <Typography variant={desktop ? "h5" : "h6"}>
+                {`הקורס מיועד למי שחולמים להיות על עמדת הדיג'יי, לבטא את עצמם בעזרת תקלוט ולגעת באנשים בעזרת המוזיקה שלהם.`}
+                <br />
+                {`נשתמש בתוכנת רקורדבוקס שאותה נלמד לעומק ממנה נעבור לסוגי המיקסים השונים כמו קאט מיקס וביט מיקס, אפקטים לופים ושיווק דיגיטלי מאמן אורח.`}
+                <br />
+                {`תיאוריה מוזיקלית והרמוניה שמדויקת לדיגייז ובעיקר ביטחון לעלות על הבמה כשיגמר הקורס.`}
+                <br />
+                {`את כל אלו נלמד בקבוצה קטנה של חמישה משתתפים כדי שתהיה אפשרות לכל אחד לבטא את עצמו ואת הקשיים שלו בתהליך.`}
+                <br />
+                {`לבסוף גם נעשה מסיבת סיום קורס בתל אביב.`}
+              </Typography>
+              {/* <ul className={classes.list}>
                 <li >
                   <Typography variant="h5">
                     {`הקורס מתקיים בקבוצה קטנה של חמישה משתתפים`}
@@ -211,37 +229,42 @@ export const CourseDetails = inject()(observer((props) =>  {
                 </li>
                 <li>
                   <Typography variant="h5">
-                    |{`מורכב מעשרה מפגשים של שלוש וחצי שעות פעם בשבוע.`}
+                    {`מורכב מעשרה מפגשים של שלוש וחצי שעות פעם בשבוע.`}
                   </Typography>
                 </li>
                 <li>
                   <Typography variant="h5">
-                    |{`הקורס נבנה בצורה כזו שתקבלו את כל התיאוריה הנדרשת אך בעיקר תצברו ניסיון מעשי וביטחון כדי שבסופו תוכלו לבטא את עצמכם בצורה שאתם מדמיינים ולא תחששו לעלות על העמדה.`}
+                    {`הקורס נבנה בצורה כזו שתקבלו את כל התיאוריה הנדרשת אך בעיקר תצברו ניסיון מעשי וביטחון כדי שבסופו תוכלו לבטא את עצמכם בצורה שאתם מדמיינים ולא תחששו לעלות על העמדה.`}
                   </Typography>
                 </li>
                 <li>
                   <Typography variant="h5">
-                    |{`הקבוצה היא קטנה כדי שאוכל לתת יחס אישי כמו מנטורינג לכל אחד מהמשתתפים כמו ליווי צמוד.`}
+                    {`הקבוצה היא קטנה כדי שאוכל לתת יחס אישי כמו מנטורינג לכל אחד מהמשתתפים כמו ליווי צמוד.`}
                   </Typography>
                 </li>
-              </ul>
+              </ul> */}
 
-              <Typography variant="h4">
+              <Typography className={classes.header} variant="h4">
                 {`מיקום`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
-                <hr />
+                <hr className={classes.headerBorder} />
               </div>
-              <Typography variant="h5">
-                {`הקורס מתרחש באולפני הצוללת שברחוב יוסף קארו 18 באולפן מקצועי ומטופל אקוסטית, אולפני הצוללת פועלים כבר מעל לעשרים שנה וזה מקום שברגע שנכנסים מרגישים את ההיסטוריה המוזיקלית שעברה בו הוא יהווה לנו בית לשלושה חודשים המיוחדים שלנו.`}
+              <Typography variant={desktop ? "h5" : "h6"}>
+                {`הקורס מתרחש באולפני הצוללת בחדר מקצועי ומטופל אקוסטית, כבר מעל לעשרים שנה וזה מקום שברגע שנכנסים מרגישים את ההיסטוריה המוזיקלית שעברה בו גם מאיר אריאל הקליט שם מוזיקה והמקום יהווה לנו בית לשלושה חודשים.`}
+                <br />
+                {`רחוב: יוסף קארו 18 תל אביב.`}
               </Typography>
-              <Typography variant="h4">
+              <Typography className={classes.header} variant="h4">
                 {`למי מיועד הקורס?`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
-                <hr />
+                <hr className={classes.headerBorder} />
               </div>
-              <ul className={classes.list}>
+              <Typography variant={desktop ? "h5" : "h6"}>
+                {`הוא מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות ואירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית לייב מול קהל וגם לאלו שפשוט רוצים לרכוש תחביב חדש מגניב או להגדיל את ארסנל הכלים המוזיקלים שלהם.`}
+              </Typography>
+              {/* <ul className={classes.list}>
                 <li >
                   <Typography variant="h5">
                     {`הקורס מתאים לכולם! אין צורך בידע קודם.`}
@@ -252,19 +275,17 @@ export const CourseDetails = inject()(observer((props) =>  {
                     {`הוא מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות והאירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית לייב מול קהל ולאלו שפשוט רוצים לרכוש תחביב חדש ומגניב.`}
                   </Typography>
                 </li>
-              </ul>
-              <Typography variant="h4">
+              </ul> */}
+              <Typography className={classes.header} variant="h4">
                 {`איזה ציוד צריך?`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
-                <hr />
+                <hr className={classes.headerBorder} />
               </div>
-              <Typography variant="h5">
-                {`קונטרולר DDJ400 ומעלה, תוכנת רקורדבוקס(מגיעה ברכישת קונטרולר), אוזניות וכבלים.`}
+              <Typography variant={desktop ? "h5" : "h6"}>
+                {`קונטרולר DDJ400 ומעלה בשביל התרגול בבית, תוכנת רקורדבוקס (מגיעה ברכישת קונטרולר), אוזניות וכבלים.`}
                 <br />
-                {`אם ברצונכם לרכוש קונטרולר אחר פנו אליי ואעזור לכם לבחור אחד לפי הצרכים שלכם.`}
-                <br />
-                {`בסופו של דבר כל הקונטרולרים דומים במהותם.`}
+                {`דברו איתי לפני שאתם רוכשים ותיהיה לכם הנחה עבור הקונטרולר שלכם.`}
               </Typography>
             </div>
           </LazyLoad>

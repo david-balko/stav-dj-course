@@ -30,23 +30,24 @@ const useStyles = makeStyles(theme => ({
       // minHeight: '125vh',
       height: 'auto'
     },
-    // '&::before': {
-    //   content: '""',
-    //   background: `url(${welcomeBackground})`,
-    //   backgroundSize: 'cover',
-    //   backgroundAttachment: 'fixed',
-    //   backgroundPosition: 'center',
-    //   opacity: 0.5,
-    //   // top: window.innerWidth * (12.5/100),
-    //   left: 0,
-    //   width: '100vw',
-    //   height: '50vh',
-    //   position: 'absolute',
-    //   alignSelf: 'center',
-    //   [theme.breakpoints.down('sm')]: {
-    //     top: '25%'
-    //   },
-    // },
+    '&::before': {
+      content: '""',
+      background: `url(${welcomeBackground})`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed',
+      backgroundPosition: 'center',
+      opacity: 0.3,
+      // top: window.innerWidth * (12.5/100),
+      left: 0,
+      width: '100vw',
+      height: '75vh',
+      position: 'absolute',
+      alignSelf: 'center',
+      [theme.breakpoints.down('sm')]: {
+        top: '25%'
+      },
+      filter: 'blur(1px)'
+    },
   },
   container: {
     display: 'flex',
@@ -100,7 +101,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     fontSize: 25,
     direction: 'rtl',
-    boxShadow: `0 0 20px #e55812`
+    boxShadow: `0 0 10px #e55812`
   }
 }))
 
@@ -147,11 +148,13 @@ export const Welcome = inject()(observer((props) =>  {
         <div className={classes.text}>
           {/* <Typography className={classes.title} variant="h2">Ron Rambell</Typography>
           <Typography variant="h4" paragraph>Personal Dj Courses</Typography> */}
-          <Typography style={{ direction: 'rtl' }} variant="h2" paragraph>
+          <Typography style={{ direction: 'rtl' }} variant={desktop ? "h2" : "h4"} paragraph>
             ברוכים הבאים
             </Typography>
-            <Typography style={{ direction: 'rtl' }} variant="h4" paragraph>
-            לקורס התקלוט שבו החלום הופך למציאות.<br/>יחס אישי למידה בקבוצות קטנות באולפן מקצועי באווירה שמחה וחברית.
+            <Typography style={{ direction: 'rtl' }} variant={desktop ? "h4" : "h6"} paragraph>
+            {`לקורס שאחריו אתם כבר על העמדה.`}
+            <br />
+            {`בעזרת מנטורינג אישי למידה בקבוצות קטנות באווירה שמחה וחברית.`}
           </Typography>
           <Button color="primary" size="large" onClick={scrollToContact} variant="contained" className={classes.button}>דברו איתי</Button>
         </div>

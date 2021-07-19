@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column-reverse',
       height: 'auto',
+      padding: theme.spacing(),
       // height: 800,
 
     },
@@ -219,6 +220,14 @@ const useStyles = makeStyles(theme => ({
       letterSpacing: "0.0075em"
     },
   },
+  subHeader: {
+    lineHeight: 0,
+    fontSize: '1.2rem',
+    color: '#EAE0CC',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.1rem',
+    }
+  }
 }))
 
 export const Syllabus = inject()(observer((props) => {
@@ -243,11 +252,11 @@ export const Syllabus = inject()(observer((props) => {
           <div className={classes.detailsContainer}>
             <LazyLoad className={classes.courseDetail} >
               <div className={classes.details} style={{ direction: 'rtl' }}>
-                <Typography variant="h3">
+                <Typography variant={desktop ? "h3" : "h4"}>
                   {`סילבוס`}
                 </Typography>
-                <Typography variant="h5">
-                  {`בכל מפגש יהיה חלק מעשי! למה? כי אין כמו להתנסות בעצמנו`}
+                <Typography variant={desktop ? "h5" : "h6"}>
+                  {`בכל מפגש תמיד יהיה זמן להתנסות מעשית כי זה בתכלס הכי טוב.`}
                 </Typography>
 
                 {desktop ?
@@ -258,10 +267,10 @@ export const Syllabus = inject()(observer((props) => {
                     <div className={classes.lessonsRow}>
 
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש ראשון`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`מה בוער בי?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -289,10 +298,10 @@ export const Syllabus = inject()(observer((props) => {
                     </div>
 
                     <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש שישי`}
                         </Typography>
-                        <Typography variant="h4">
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
                           {`איך משמרים את האנרגיה ברחבה?`}
                         </Typography>
                         <ul className={classes.list}>
@@ -316,10 +325,10 @@ export const Syllabus = inject()(observer((props) => {
                     </div>
                     <div className={classes.lessonsRow}>
                       <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש שני`}
                         </Typography>
-                        <Typography variant="h4">
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
                           {`במה דיג'יי דומה לטבח?`}
                         </Typography>
                         <ul className={classes.list}>
@@ -347,11 +356,11 @@ export const Syllabus = inject()(observer((props) => {
                       </div>
 
                       <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש שביעי`}
                         </Typography>
-                        <Typography variant="h4">
-                          {`כמו בתיאטרון גם כאן יש בק סטייג וחשוב לדעת איך מתמודדים איתו.`}
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {`שיעור ראשון בגלישת גלים.`}
                         </Typography>
                         <ul className={classes.list}>
                           <li>
@@ -362,6 +371,11 @@ export const Syllabus = inject()(observer((props) => {
                           <li>
                             <Typography variant={desktop ? 'h5' : 'h6'}>
                               {`עמידה מול קהל`}
+                            </Typography>
+                          </li>
+                          <li>
+                            <Typography variant={desktop ? 'h5' : 'h6'}>
+                              {`תקשורת מול ההפקה`}
                             </Typography>
                           </li>
                           <li>
@@ -381,10 +395,10 @@ export const Syllabus = inject()(observer((props) => {
 
                     <div className={classes.lessonsRow}>
                       <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש שלישי`}
                         </Typography>
-                        <Typography variant="h4">
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
                           {`מה עושה מוזיקה כל כך נעימה?`}
                         </Typography>
                         <ul className={classes.list}>
@@ -412,10 +426,10 @@ export const Syllabus = inject()(observer((props) => {
                       </div>
 
                       <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש שמיני`}
                         </Typography>
-                        <Typography variant="h4">
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
                           {`אמן אורח רועי זינגר DJ Oatmilk`}
                         </Typography>
                         <ul className={classes.list}>
@@ -441,10 +455,10 @@ export const Syllabus = inject()(observer((props) => {
 
                     <div className={classes.lessonsRow}>
                       <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש רביעי`}
                         </Typography>
-                        <Typography variant="h4">
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
                           {`למה נשים הן דיג'יות טובות יותר?`}
                         </Typography>
                         <ul className={classes.list}>
@@ -467,10 +481,10 @@ export const Syllabus = inject()(observer((props) => {
                       </div>
 
                       <div className={classes.lesson}>
-                        <Typography style={{lineHeight: 0}} >
+                        <Typography className={classes.subHeader} >
                           {`מפגש תשיעי`}
                         </Typography>
-                        <Typography variant="h4">
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
                           {`חוששים? גם אני`}
                         </Typography>
                         <ul className={classes.list}>
@@ -494,10 +508,10 @@ export const Syllabus = inject()(observer((props) => {
                     </div>
                     <div className={classes.lessonsRow}>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש חמישי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`למה לופים הם בעצם המושיעים שלנו?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -519,10 +533,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש עשירי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`תחשבו טוב! מה הקשר בין רדבול להצלחה?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -543,10 +557,10 @@ export const Syllabus = inject()(observer((props) => {
                   :
                   <div className={classes.lessons}>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש ראשון`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`מה בוער בי?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -573,10 +587,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש שני`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`במה דיג'יי דומה לטבח?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -603,10 +617,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש שלישי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`מה עושה מוזיקה כל כך נעימה?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -633,10 +647,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש רביעי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`למה נשים הן דיג'יות טובות יותר?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -658,10 +672,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש חמישי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`למה לופים הם בעצם המושיעים שלנו?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -683,10 +697,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש שישי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`איך משמרים את האנרגיה ברחבה?`}
                       </Typography>
                       <ul className={classes.list}>
@@ -708,11 +722,11 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש שביעי`}
                       </Typography>
-                      <Typography variant="h4">
-                        {`כמו בתיאטרון גם כאן יש בק סטייג וחשוב לדעת איך מתמודדים איתו.`}
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
+                        {`שיעור ראשון בגלישת גלים.`}
                       </Typography>
                       <ul className={classes.list}>
                         <li>
@@ -724,6 +738,11 @@ export const Syllabus = inject()(observer((props) => {
                           <Typography variant={desktop ? 'h5' : 'h6'}>
                             {`עמידה מול קהל`}
                           </Typography>
+                        </li>
+                        <li>
+                            <Typography variant={desktop ? 'h5' : 'h6'}>
+                              {`תקשורת מול ההפקה`}
+                            </Typography>
                         </li>
                         <li>
                           <Typography variant={desktop ? 'h5' : 'h6'}>
@@ -738,10 +757,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש שמיני`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`אמן אורח רועי זינגר DJ Oatmilk`}
                       </Typography>
                       <ul className={classes.list}>
@@ -763,10 +782,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש תשיעי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`חוששים? גם אני`}
                       </Typography>
                       <ul className={classes.list}>
@@ -788,10 +807,10 @@ export const Syllabus = inject()(observer((props) => {
                       </ul>
                     </div>
                     <div className={classes.lesson}>
-                      <Typography style={{lineHeight: 0}} >
+                      <Typography className={classes.subHeader} >
                         {`מפגש עשירי`}
                       </Typography>
-                      <Typography variant="h4">
+                      <Typography variant={desktop ? 'h4' : 'h5'}>
                         {`תחשבו טוב! מה הקשר בין רדבול להצלחה?`}
                       </Typography>
                       <ul className={classes.list}>

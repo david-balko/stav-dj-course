@@ -18,11 +18,11 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     padding: theme.spacing(2),
     '& > *': {
-      margin: theme.spacing(2)
+      // margin: theme.spacing(2)
     },
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      
+      padding: theme.spacing(),
     },
     color: 'white',
     
@@ -82,6 +82,9 @@ const useStyles = makeStyles(theme => ({
   datesTitle: {
     alignSelf: 'flex-start',
     marginRight: theme.spacing(10)
+  },
+  header: {
+    color: '#EAE0CC'
   }
 }))
 
@@ -102,11 +105,11 @@ export const Instructor = inject()(observer((props) =>  {
         <div className={classes.instructorDetails}>
           <Avatar alt="Ron Ramball" src={instructorPic} style={{width: desktop ? '20vw' : '60vw', height: desktop ? '20vw' : '60vw'}} />
           <div className={classes.text}>
-            <Typography variant="h3">
-              {`על היוצר`}
+            <Typography className={classes.header} variant={desktop ? "h3" : "h4"}>
+              {`קצת עליי`}
             </Typography>
             <div style={{textAlign: 'right'}}>
-              <Typography variant="h4">
+              <Typography variant={desktop ? "h4" : "h5"}>
                 {`שמח שהגעתם הנה,`}
               </Typography>
               <Typography style={{lineHeight: '150%'}} variant="h6">
