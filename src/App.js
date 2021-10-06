@@ -57,6 +57,9 @@ const theme = createMuiTheme({
     primary: {
       main: '#E55812',
     },
+    secondary: {
+      main: '#AB96D2'
+    }
     
   },
   breakpoints: {

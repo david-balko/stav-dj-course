@@ -7,6 +7,119 @@ import courseDetailsPic from '../assets/course-details-pic.jpg'
 import { Image } from "./Image";
 import { ReactComponent as RomanticVinylSvg } from '../assets/romantic-vinyl.svg'
 
+const lessons = [
+  {
+    smallTitle: "מפגש ראשון",
+    bigTitle: "מה בוער בי?",
+    points: [
+      "המנוע הפנימי שלי לעולם התקלוט",
+      "לומדים את ה-תוכנה Rekordbox",
+      "למה כל הציוד הזה?",
+      "מיקס ראשון Crossfader"
+    ]
+  },
+  {
+    smallTitle: "מפגש שני",
+    bigTitle: "איך הכל התחיל",
+    points: [
+      "היסטוריית המוזיקה האלקטרונית",
+      "איך קונים ומשיגים מוזיקה חדשה",
+      "מה זה Bpm? לומדים לספור פעימות"
+    ]
+  },
+  {
+    smallTitle: "מפגש שלישי",
+    bigTitle: "במה דיג'יי דומה לטבח?",
+    points: [
+      "מבנה של שיר",
+      "סדר וארגון בתוכנה ובמחשב",
+      "למה צריכים אוזניות."
+    ]
+  },
+  {
+    smallTitle: "מפגש רביעי",
+    bigTitle: "מה עושה מוזיקה כל כך נעימה?",
+    points: [
+      "סולם מוזיקלי טיפונת על הרמוניה",
+      "קאט מיקס Cut mix",
+      "מתחילים ללמוד אפקטים הראשון Echo"
+    ]
+  },
+  {
+    smallTitle: "מפגש חמישי",
+    bigTitle: "למה נשים הן דיג'יות טובות יותר?",
+    points: [
+      "אקולייזר EQ",
+      "ביט מיקס Beat mix",
+      "אפקט חדש, הפעם Reverb"
+    ]
+  },
+  {
+    smallTitle: "מפגש שישי",
+    bigTitle: "חוקרים איקולייזר לעומק",
+    points: [
+      "פילטרים",
+      "איקיו מתקדם",
+      "הופכים אותו לחבר."
+    ]
+  },
+  {
+    smallTitle: "מפגש שביעי",
+    bigTitle: "למה לופים הם בעצם המושיעים שלנו?",
+    points: [
+      "לופים, חוזר ואומר לופים!",
+      "הוט קיוז Hot cues",
+      "אפקט חדש לאוסף Transformer"
+    ]
+  },
+  {
+    smallTitle: "מפגש שמיני",
+    bigTitle: "פילוסופיה מעשית.",
+    points: [
+      "השילוש הקדוש דיג'יי קהל אווירה",
+      "עמידה מול קהל",
+      "תקשורת מול ההפקה",
+      "מה עושים כשמגיעים לעמדה??",
+      "יצירת עלייה עם לופ."
+    ]
+  },
+  {
+    smallTitle: "מפגש תשיעי",
+    bigTitle: "שיווק כדרך חיים (אמן אורח רועי זינגר DJ Oatmilk)",
+    points: [
+      "שיווק דיגיטלי לדיג'ייז",
+      "מה הקשיים בעולם השיווק העצמי ואיך מתגברים עליהם",
+      "סושיאל מדיה"
+    ]
+  },
+  {
+    smallTitle: "מפגש עשירי",
+    bigTitle: "איך הופכים למיוחדים בנוף",
+    points: [
+      "נעבור על כל סוגי הסטים השונים",
+      "איך בונים סט בצורה מרתקת?",
+      "דאבל דרופינג Double Dropping"
+    ]
+  },
+  {
+    smallTitle: "מפגש אחת עשרה",
+    bigTitle: "חוששים? גם אני",
+    points: [
+      "מפגש פאלטות מדברים על הטעויות והחששות שלנו בקטע בונה, אל תדאגו גם על החוזקות.",
+      "סיכום שיתוף חוויות, מה עושים מפה?",
+      "מנגנים יחד, B2B"
+    ]
+  },
+  {
+    smallTitle: "מפגש שתיים עשרה",
+    bigTitle: "תחשבו טוב! מה הקשר בין רדבול להצלחה?",
+    points: [
+      "התקלוט הראשון שלכם, מתרגשים ביחד!",
+      "אירוע לכל החברים בבר תל אביב מקסים שכל אחד ינגן סט במשך חצי שעה."
+    ]
+  },
+]
+
 const useStyles = makeStyles(theme => ({
   courseDetails: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
@@ -237,6 +350,8 @@ export const Syllabus = inject()(observer((props) => {
 
   const classes = useStyles()
 
+  const numLines = 6
+
   return (
     <>
       <div className={classes.courseDetails} id="course-details">
@@ -262,571 +377,265 @@ export const Syllabus = inject()(observer((props) => {
                 {desktop ?
                   <div className={classes.lessons}>
 
-
+                    
 
                     <div className={classes.lessonsRow}>
 
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {lessons[0].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[0].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[0].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {lessons[0 + numLines].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[0 + numLines].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[0 + numLines].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+
+                    </div>
+                    <div className={classes.lessonsRow}>
                     <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש ראשון`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`מה בוער בי?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`המנוע הפנימי שלי לעולם התקלוט`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`לומדים את ה-תוכנה Rekordbox`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`למה כל הציוד הזה?`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מיקס ראשון Crossfader`}
-                          </Typography>
-                        </li>
-                      </ul>
+                        <Typography className={classes.subHeader} >
+                          {lessons[1].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[1].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[1].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {lessons[1 + numLines].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[1 + numLines].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[1 + numLines].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+
                     </div>
 
+                    <div className={classes.lessonsRow}>
                     <div className={classes.lesson}>
                         <Typography className={classes.subHeader} >
-                          {`מפגש שישי`}
+                          {lessons[2].smallTitle}
                         </Typography>
                         <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`איך משמרים את האנרגיה ברחבה?`}
+                          {lessons[2].bigTitle}
                         </Typography>
                         <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`נעבור על כל סוגי הסטים השונים`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`איך בונים סט בצורה מרתקת?`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`דאבל דרופינג Double Dropping`}
-                            </Typography>
-                          </li>
+                          {
+                            lessons[2].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
                         </ul>
                       </div>
-                    </div>
-                    <div className={classes.lessonsRow}>
                       <div className={classes.lesson}>
                         <Typography className={classes.subHeader} >
-                          {`מפגש שני`}
+                          {lessons[2 + numLines].smallTitle}
                         </Typography>
                         <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`במה דיג'יי דומה לטבח?`}
+                          {lessons[2 + numLines].bigTitle}
                         </Typography>
                         <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מה זה BPM? לומדים לספור פעימות.`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`סדר וארגון בתוכנה ובמחשב`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`איך קונים ומשיגים מוזיקה חדשה`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`למה צריכים אוזניות.`}
-                            </Typography>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className={classes.lesson}>
-                        <Typography className={classes.subHeader} >
-                          {`מפגש שביעי`}
-                        </Typography>
-                        <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`שיעור ראשון בגלישת גלים.`}
-                        </Typography>
-                        <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`השילוש הקדוש די'גיי קהל אווירה`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`עמידה מול קהל`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`תקשורת מול ההפקה`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מה עושים כשמגיעים לעמדה??`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`יצירת עלייה עם לופ.`}
-                            </Typography>
-                          </li>
+                          {
+                            lessons[2 + numLines].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
                         </ul>
                       </div>
 
                     </div>
 
                     <div className={classes.lessonsRow}>
-                      <div className={classes.lesson}>
+                    <div className={classes.lesson}>
                         <Typography className={classes.subHeader} >
-                          {`מפגש שלישי`}
+                          {lessons[3].smallTitle}
                         </Typography>
                         <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`מה עושה מוזיקה כל כך נעימה?`}
+                          {lessons[3].bigTitle}
                         </Typography>
                         <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מבנה של שיר`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`סולם מוזיקלי טיפונת על הרמוניה`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`קאט מיקס Cut mix`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מתחילים ללמוד אפקטים הראשון Echo`}
-                            </Typography>
-                          </li>
+                          {
+                            lessons[3].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
                         </ul>
                       </div>
-
                       <div className={classes.lesson}>
                         <Typography className={classes.subHeader} >
-                          {`מפגש שמיני`}
+                          {lessons[3 + numLines].smallTitle}
                         </Typography>
                         <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`אמן אורח רועי זינגר DJ Oatmilk`}
+                          {lessons[3 + numLines].bigTitle}
                         </Typography>
                         <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`שיווק דיגיטלי לדיג'ייז`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`כל מה שצריך לדעת על פייסבוק היום.`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מתחילים שיווק כבר במפגש.`}
-                            </Typography>
-                          </li>
-                        </ul>
-                      </div>
-
-                    </div>
-
-                    <div className={classes.lessonsRow}>
-                      <div className={classes.lesson}>
-                        <Typography className={classes.subHeader} >
-                          {`מפגש רביעי`}
-                        </Typography>
-                        <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`למה נשים הן דיג'יות טובות יותר?`}
-                        </Typography>
-                        <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`אקולייזר EQ`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`ביט מיקס Beat mix`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`אפקט חדש - הפעם Reverb`}
-                            </Typography>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className={classes.lesson}>
-                        <Typography className={classes.subHeader} >
-                          {`מפגש תשיעי`}
-                        </Typography>
-                        <Typography variant={desktop ? 'h4' : 'h5'}>
-                          {`חוששים? גם אני`}
-                        </Typography>
-                        <ul className={classes.list}>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מפגש פאלטות מדברים על הטעויות והחששות שלנו בקטע בונה, אל תדאגו גם על החוזקות.`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`סיכום שיתוף חוויות, מה עושים מפה?`}
-                            </Typography>
-                          </li>
-                          <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`מנגנים יחד, B2B`}
-                            </Typography>
-                          </li>
+                          {
+                            lessons[3 + numLines].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
                         </ul>
                       </div>
                     </div>
                     <div className={classes.lessonsRow}>
                     <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש חמישי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`למה לופים הם בעצם המושיעים שלנו?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`לופים, חוזר ואומר לופים!`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`הוט קיוז Hot cues`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`אפקט חדש לאוסף Transformer`}
-                          </Typography>
-                        </li>
-                      </ul>
+                        <Typography className={classes.subHeader} >
+                          {lessons[4].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[4].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[4].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {lessons[4 + numLines].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[4 + numLines].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[4 + numLines].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
                     </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש עשירי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`תחשבו טוב! מה הקשר בין רדבול להצלחה?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`התקלוט הראשון שלכם, מתרגשים ביחד!`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`אירוע לכל החברים בבר תל אביב מקסים שכל אחד ינגן סט במשך חצי שעה.`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
+                    <div className={classes.lessonsRow}>
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {lessons[5].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[5].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[5].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {lessons[5 + numLines].smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {lessons[5 + numLines].bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            lessons[5 + numLines].points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
                     </div>
                   </div>
                   :
                   <div className={classes.lessons}>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש ראשון`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`מה בוער בי?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`המנוע הפנימי שלי לעולם התקלוט`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`לומדים את ה-תוכנה Rekordbox`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`למה כל הציוד הזה?`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מיקס ראשון Crossfader`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש שני`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`במה דיג'יי דומה לטבח?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מה זה BPM? לומדים לספור פעימות.`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`סדר וארגון בתוכנה ובמחשב`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`איך קונים ומשיגים מוזיקה חדשה`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`למה צריכים אוזניות.`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש שלישי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`מה עושה מוזיקה כל כך נעימה?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מבנה של שיר`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`סולם מוזיקלי טיפונת על הרמוניה`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`קאט מיקס Cut mix`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מתחילים ללמוד אפקטים הראשון Echo`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש רביעי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`למה נשים הן דיג'יות טובות יותר?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`אקולייזר EQ`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`ביט מיקס Beat mix`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`אפקט חדש - הפעם Reverb`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש חמישי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`למה לופים הם בעצם המושיעים שלנו?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`לופים, חוזר ואומר לופים!`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`הוט קיוז Hot cues`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`אפקט חדש לאוסף Transformer`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש שישי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`איך משמרים את האנרגיה ברחבה?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`נעבור על כל סוגי הסטים השונים`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`איך בונים סט בצורה מרתקת?`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`דאבל דרופינג Double Dropping`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש שביעי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`שיעור ראשון בגלישת גלים.`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`השילוש הקדוש די'גיי קהל אווירה`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`עמידה מול קהל`}
-                          </Typography>
-                        </li>
-                        <li>
-                            <Typography variant={desktop ? 'h5' : 'h6'}>
-                              {`תקשורת מול ההפקה`}
-                            </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מה עושים כשמגיעים לעמדה??`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`יצירת עלייה עם לופ.`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש שמיני`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`אמן אורח רועי זינגר DJ Oatmilk`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`שיווק דיגיטלי לדיג'ייז`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`כל מה שצריך לדעת על פייסבוק היום.`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מתחילים שיווק כבר במפגש.`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש תשיעי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`חוששים? גם אני`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מפגש פאלטות מדברים על הטעויות והחששות שלנו בקטע בונה, אל תדאגו גם על החוזקות.`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`סיכום שיתוף חוויות, מה עושים מפה?`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`מנגנים יחד, B2B`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className={classes.lesson}>
-                      <Typography className={classes.subHeader} >
-                        {`מפגש עשירי`}
-                      </Typography>
-                      <Typography variant={desktop ? 'h4' : 'h5'}>
-                        {`תחשבו טוב! מה הקשר בין רדבול להצלחה?`}
-                      </Typography>
-                      <ul className={classes.list}>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`התקלוט הראשון שלכם, מתרגשים ביחד!`}
-                          </Typography>
-                        </li>
-                        <li>
-                          <Typography variant={desktop ? 'h5' : 'h6'}>
-                            {`אירוע לכל החברים בבר תל אביב מקסים שכל אחד ינגן סט במשך חצי שעה.`}
-                          </Typography>
-                        </li>
-                      </ul>
-                    </div>
-
+                    {lessons.map(l =>
+                      <div className={classes.lesson}>
+                        <Typography className={classes.subHeader} >
+                          {l.smallTitle}
+                        </Typography>
+                        <Typography variant={desktop ? 'h4' : 'h5'}>
+                          {l.bigTitle}
+                        </Typography>
+                        <ul className={classes.list}>
+                          {
+                            l.points.map(l => 
+                            <li>
+                              <Typography variant={desktop ? 'h5' : 'h6'}>
+                                {l}
+                              </Typography>
+                            </li>)
+                          }
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 }
               </div>
