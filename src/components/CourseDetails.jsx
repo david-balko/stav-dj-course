@@ -1,10 +1,6 @@
-import { makeStyles, div, Typography, useTheme, useMediaQuery, Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import { makeStyles, Typography, useTheme, useMediaQuery } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
-import { useEffect, useRef } from "react";
 import LazyLoad from "react-lazyload";
-import courseDetailsBackground from '../assets/course-details-background.jpg'
-import courseDetailsPic from '../assets/course-details-pic.jpg'
-import { Image } from "./Image";
 import { ReactComponent as MixerSvg } from '../assets/dj-mixer.svg'
 
 const useStyles = makeStyles(theme => ({
@@ -211,7 +207,7 @@ export const CourseDetails = inject()(observer((props) =>  {
                 <hr className={classes.headerBorder} />
               </div>
               <Typography variant={desktop ? "h5" : "h6"}>
-                {`הקורס מיועד למי שחולמים להיות על עמדת הדיג'יי, לבטא את עצמם בעזרת תקלוט ולגעת באנשים בעזרת המוזיקה שלהם.`}
+                {`הקורס מיועד למי שחולמים להיות על עמדת הדיג'יי, לבטא את עצמם בעזרת תקלוט ולגעת באנשים בעזרת המוזיקה שלך.`}
                 <br />
                 {`נשתמש בתוכנת רקורדבוקס שאותה נלמד לעומק ממנה נעבור לסוגי המיקסים השונים כמו קאט מיקס וביט מיקס, אפקטים לופים ושיווק דיגיטלי מאמן אורח.`}
                 <br />

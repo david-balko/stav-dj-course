@@ -1,26 +1,38 @@
-import { makeStyles, Typography, Button, InputBase, Paper, useTheme, useMediaQuery, Snackbar, IconButton } from "@material-ui/core";
+import { makeStyles, Typography, Button, InputBase, Paper, useTheme, useMediaQuery, Snackbar } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
 import { useState } from "react";
 import emailjs from 'emailjs-com';
 import validator from "validator";
-import contactBackground from '../assets/contact-background.jpg'
-import CloseIcon from '@material-ui/icons/Close';
 import{ init } from 'emailjs-com';
 
 init("user_Yot4vNSw7IyITx5P1TaGG");
 
-const lessonDates = [
-  `ד' 20.10`,
-  `ד' 27.10`,
-  `ד' 03.11`,
-  `ד' 10.11`,
+const lessonDates1 = [
+  `ב' 15.11`,
+  `ב' 22.11`,
+  `ב' 29.11`,
+  `ב' 06.12`,
+  `ב' 13.12`,
+  `ב' 20.12`,
+  `ב' 27.12`,
+  `ב' 03.01`,
+  `ב' 10.01`,
+  `ב' 17.01`,
+  `ב' 24.01`
+]
+
+const lessonDates2 = [
   `ד' 17.11`,
   `ד' 24.11`,
   `ד' 01.12`,
   `ד' 08.12`,
   `ד' 15.12`,
   `ד' 22.12`,
-  `ד' 29.12`
+  `ה' 30.12`,
+  `ד' 05.01`,
+  `ד' 12.01`,
+  `ד' 19.01`,
+  `ד' 26.01`
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -61,6 +73,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column'
     },
+    justifyContent: 'space-between',
     // alignItems: 'center',
   },
   cycleRow: {
@@ -85,10 +98,10 @@ const useStyles = makeStyles(theme => ({
         marginBottom: theme.spacing(2),
       },
     },
-    marginRight: theme.spacing(6),
+    // marginRight: theme.spacing(6),
   },
   cyclesAndPrice: {
-    width: '30%',
+    width: '40%',
     textAlign: 'right',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -97,7 +110,7 @@ const useStyles = makeStyles(theme => ({
   },
   contactMe: {
     marginRight: theme.spacing(2),
-    width: '35%',
+    width: '30%',
     textAlign: 'right',
     '& > *': {
       margin: theme.spacing(4),
@@ -128,7 +141,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom: theme.spacing(2)
       },
     },
-    width: '35%'
+    width: '30%'
   },
   inputs: {
     marginTop: -theme.spacing(2),
@@ -222,34 +235,63 @@ export const Contact = inject()(observer((props) =>  {
 
   return (
     <div id="contact" className={classes.contact}>
-      <Typography variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>
+      {!props.isFirst && <Typography variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>}
       <div className={classes.text}>
         <div className={classes.cyclesAndPrice}>
           <div className={classes.cycles}>
             <div style={{display: 'flex', flexDirection: 'column', }}>
-              <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור #2`}</Typography>
+              <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ב׳`}</Typography>
               <div className={classes.cycleRow}>
-                <Typography variant="h6">{lessonDates[0]}</Typography>
-                <Typography variant="h6">{lessonDates[0 + numRows]}</Typography>
+                <Typography variant="h6">{lessonDates1[0]}</Typography>
+                <Typography variant="h6">{lessonDates1[0 + numRows]}</Typography>
               </div>
               <div className={classes.cycleRow}>
-              <Typography variant="h6">{lessonDates[1]}</Typography>
-                <Typography variant="h6">{lessonDates[1 + numRows]}</Typography>
+              <Typography variant="h6">{lessonDates1[1]}</Typography>
+                <Typography variant="h6">{lessonDates1[1 + numRows]}</Typography>
               </div>
               <div className={classes.cycleRow}>
-              <Typography variant="h6">{lessonDates[2]}</Typography>
-                <Typography variant="h6">{lessonDates[2 + numRows]}</Typography>
+              <Typography variant="h6">{lessonDates1[2]}</Typography>
+                <Typography variant="h6">{lessonDates1[2 + numRows]}</Typography>
               </div>
               <div className={classes.cycleRow}>
-                <Typography variant="h6">{lessonDates[3]}</Typography>
-                <Typography variant="h6">{lessonDates[3 + numRows]}</Typography>
+                <Typography variant="h6">{lessonDates1[3]}</Typography>
+                <Typography variant="h6">{lessonDates1[3 + numRows]}</Typography>
               </div>
               <div className={classes.cycleRow}>
-              <Typography variant="h6">{lessonDates[4]}</Typography>
-                <Typography variant="h6">{lessonDates[4 + numRows]}</Typography>
+              <Typography variant="h6">{lessonDates1[4]}</Typography>
+                <Typography variant="h6">{lessonDates1[4 + numRows]}</Typography>
               </div>
               <div className={classes.cycleRow}>
-                <Typography variant="h6">{lessonDates[5]}</Typography>
+                <Typography variant="h6">{lessonDates1[5]}</Typography>
+                  <div>
+                    <Typography variant="h6">{`מסיבת סיום`}</Typography>
+                  </div>
+              </div>
+            </div>
+            <div style={{display: 'flex', flexDirection: 'column', }}>
+              <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ג׳`}</Typography>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{lessonDates2[0]}</Typography>
+                <Typography variant="h6">{lessonDates2[0 + numRows]}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+              <Typography variant="h6">{lessonDates2[1]}</Typography>
+                <Typography variant="h6">{lessonDates2[1 + numRows]}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+              <Typography variant="h6">{lessonDates2[2]}</Typography>
+                <Typography variant="h6">{lessonDates2[2 + numRows]}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{lessonDates2[3]}</Typography>
+                <Typography variant="h6">{lessonDates2[3 + numRows]}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+              <Typography variant="h6">{lessonDates2[4]}</Typography>
+                <Typography variant="h6">{lessonDates2[4 + numRows]}</Typography>
+              </div>
+              <div className={classes.cycleRow}>
+                <Typography variant="h6">{lessonDates2[5]}</Typography>
                   <div>
                     <Typography variant="h6">{`מסיבת סיום`}</Typography>
                   </div>
@@ -275,7 +317,7 @@ export const Contact = inject()(observer((props) =>  {
         
         <div className={classes.form}>
           <Typography variant={desktop ? "h4" : "h5"}>
-            {`לקביעת מפגש התאמה`}
+            {`לקביעת שיחת התאמה קלילה`}
           </Typography>
           <div className={classes.inputs}>
             <Paper style={{padding: 5}}>

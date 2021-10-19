@@ -1,4 +1,4 @@
-import { createMuiTheme, CssBaseline, ThemeProvider, Typography } from '@material-ui/core';
+import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import './App.css';
 import { CourseDetails } from './components/CourseDetails';
 import { Welcome } from './components/Welcome';
@@ -103,6 +103,7 @@ function App() {
       <div className="App">
         <Welcome />
         <CourseDetails />
+        <Contact isFirst={true} />
         <Syllabus />
         <Instructor />
         <Contact />

@@ -3,8 +3,6 @@ import { inject, observer } from "mobx-react";
 import welcomeBackground from '../assets/syllabus-background.jpg'
 import profilePicLay from '../assets/ron-rambell-logo-lay.png'
 import profilePic from '../assets/ron-rambell-logo.png'
-import { Image } from "./Image";
-import { useEffect, useRef } from "react";
 
 const useStyles = makeStyles(theme => ({
   welcome: {
@@ -104,19 +102,6 @@ const useStyles = makeStyles(theme => ({
     boxShadow: `0 0 10px #e55812`
   }
 }))
-
-const getPixelRatio = context => {
-  let backingStore =
-  context.backingStorePixelRatio ||
-  context.webkitBackingStorePixelRatio ||
-  context.mozBackingStorePixelRatio ||
-  context.msBackingStorePixelRatio ||
-  context.oBackingStorePixelRatio ||
-  context.backingStorePixelRatio ||
-  1;
-  
-  return (window.devicePixelRatio || 1) / backingStore;
-}
 
 export const Welcome = inject()(observer((props) =>  {
 

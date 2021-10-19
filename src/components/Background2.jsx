@@ -1,10 +1,7 @@
-import { makeStyles, Typography, useMediaQuery, useTheme } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
-import welcomeBackground from '../assets/welcome-background.jpg'
-import profilePic from '../assets/ron-rambell-logo-lay.png'
-import { Image } from "./Image";
 import { useEffect, useRef } from "react";
-import { Particle, Particles, getPixelRatio, colours } from "../lib/animationClasses";
+import { Particle, Particles, getPixelRatio } from "../lib/animationClasses";
 
 const useStyles = makeStyles(theme => ({
 
@@ -23,9 +20,6 @@ const useStyles = makeStyles(theme => ({
 export const Background2 = inject()(observer((props) =>  {
 
   let canvasRef = useRef()
-
-  const theme = useTheme()
-  const desktop = useMediaQuery(theme.breakpoints.up('md'))
 
   const classes = useStyles()
 

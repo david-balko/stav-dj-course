@@ -1,10 +1,6 @@
-import { makeStyles, div, Typography, useTheme, useMediaQuery, Divider } from "@material-ui/core";
+import { makeStyles, div, Typography, useTheme, useMediaQuery } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
-import { useEffect, useRef } from "react";
 import LazyLoad from "react-lazyload";
-import courseDetailsBackground from '../assets/course-details-background.jpg'
-import courseDetailsPic from '../assets/course-details-pic.jpg'
-import { Image } from "./Image";
 import { ReactComponent as RomanticVinylSvg } from '../assets/romantic-vinyl.svg'
 
 const lessons = [
@@ -391,7 +387,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[0].points.map(l => 
-                            <li>
+                            <li key={`lesson1${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -409,7 +405,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[0 + numLines].points.map(l => 
-                            <li>
+                            <li key={`lesson2${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -430,7 +426,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[1].points.map(l => 
-                            <li>
+                            <li key={`lesson3${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -448,7 +444,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[1 + numLines].points.map(l => 
-                            <li>
+                            <li key={`lesson4${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -470,7 +466,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[2].points.map(l => 
-                            <li>
+                            <li  key={`lesson5${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -488,7 +484,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[2 + numLines].points.map(l => 
-                            <li>
+                            <li  key={`lesson6${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -510,7 +506,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[3].points.map(l => 
-                            <li>
+                            <li key={`lesson7${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -528,7 +524,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[3 + numLines].points.map(l => 
-                            <li>
+                            <li key={`lesson8${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -548,7 +544,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[4].points.map(l => 
-                            <li>
+                            <li key={`lesson9${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -566,7 +562,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[4 + numLines].points.map(l => 
-                            <li>
+                            <li key={`lesson10${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -586,7 +582,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[5].points.map(l => 
-                            <li>
+                            <li key={`lesson11${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -604,7 +600,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             lessons[5 + numLines].points.map(l => 
-                            <li>
+                            <li key={`lesson12${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>
@@ -617,7 +613,7 @@ export const Syllabus = inject()(observer((props) => {
                   :
                   <div className={classes.lessons}>
                     {lessons.map(l =>
-                      <div className={classes.lesson}>
+                      <div key={`lessons${l}`} className={classes.lesson}>
                         <Typography className={classes.subHeader} >
                           {l.smallTitle}
                         </Typography>
@@ -627,7 +623,7 @@ export const Syllabus = inject()(observer((props) => {
                         <ul className={classes.list}>
                           {
                             l.points.map(l => 
-                            <li>
+                            <li key={`lesson13${l}`}>
                               <Typography variant={desktop ? 'h5' : 'h6'}>
                                 {l}
                               </Typography>

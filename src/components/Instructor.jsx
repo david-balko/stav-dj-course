@@ -1,8 +1,6 @@
 import { makeStyles, div, Typography, useTheme, useMediaQuery, Avatar } from "@material-ui/core";
 import { inject, observer } from "mobx-react";
-import instructorBackground from '../assets/instructor-background.jpg'
 import instructorPic from '../assets/instructor-pic.JPG'
-import { Image } from "./Image";
 
 const useStyles = makeStyles(theme => ({
   instructor: {
