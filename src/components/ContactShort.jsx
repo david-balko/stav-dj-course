@@ -8,17 +8,17 @@ import{ init } from 'emailjs-com';
 init("user_Yot4vNSw7IyITx5P1TaGG");
 
 const lessonDates1 = [
-  `ג' 16.11`,
-  `ג' 23.11`,
-  `ג' 30.11`,
-  `ג' 07.12`,
-  `ג' 14.12`,
-  `ג' 21.12`,
-  `ג' 28.12`,
-  `ג' 04.01`,
-  `ג' 11.01`,
-  `ג' 18.01`,
-  `ג' 25.01`
+  `ב' 15.11`,
+  `ב' 22.11`,
+  `ב' 29.11`,
+  `ב' 06.12`,
+  `ב' 13.12`,
+  `ב' 20.12`,
+  `ב' 27.12`,
+  `ב' 03.01`,
+  `ב' 10.01`,
+  `ב' 17.01`,
+  `ב' 24.01`
 ]
 
 const lessonDates2 = [
@@ -50,10 +50,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     // alignItems: 'center',
     // justifyContent: 'space-around',
-    '& > *': {
-      margin: theme.spacing(2)
-    },
-    padding: theme.spacing(4),
+    // '& > *': {
+    //   margin: theme.spacing(2)
+    // },
+    paddingRight: theme.spacing(4),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       height: 'auto'
@@ -131,7 +131,7 @@ const useStyles = makeStyles(theme => ({
     // justifyContent: 'space-between',
     flexDirection: 'column',
     '& > *': {
-      margin: theme.spacing(4),
+      margin: theme.spacing(2),
     },
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
@@ -141,23 +141,25 @@ const useStyles = makeStyles(theme => ({
         marginBottom: theme.spacing(2)
       },
     },
-    width: '30%'
+    width: '70%'
   },
   inputs: {
+    marginRight: '80%',
     marginTop: -theme.spacing(2),
     '& > *': {
       margin: theme.spacing(2),
       '& > *': {
-        width: '100%'
+        width: '80%'
       }
     },
-    width: '100%'
+    width: '80%'
   },
   button: {
     fontSize: 25,
     direction: 'rtl',
     boxShadow: `0 0 10px #9e85cc`,
-    color: 'white'
+    color: 'white',
+    height: '50px',
   },
   price: {
     width: "90%",
@@ -185,7 +187,7 @@ const useStyles = makeStyles(theme => ({
 
 }))
 
-export const Contact = inject()(observer((props) =>  {
+export const ContactShort = inject()(observer((props) =>  {
 
   const theme = useTheme()
   const desktop = useMediaQuery(theme.breakpoints.up('sm'))
@@ -235,9 +237,8 @@ export const Contact = inject()(observer((props) =>  {
 
   return (
     <div id="contact" className={classes.contact}>
-      {!props.isFirst && <Typography variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>}
       <div className={classes.text}>
-        <div className={classes.cyclesAndPrice}>
+        {/* <div className={classes.cyclesAndPrice}>
           <div className={classes.cycles}>
             <div style={{display: 'flex', flexDirection: 'column', }}>
               <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ב׳`}</Typography>
@@ -297,27 +298,19 @@ export const Contact = inject()(observer((props) =>  {
                   </div>
               </div>
             </div>
-            {/* <div>
-              <Typography variant="h4">{`מחזור #2`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-            </div> */}
           </div>
           <div className={classes.price}>
-            <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה10/11 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography>
+            <Typography variant={desktop ? "h5" : "h6"}>{`עלות הקורס 2600 ש״ח.`}</Typography>
             <Typography variant={desktop ? "h5" : "h6"}>{`11 מפגשים ומסיבת סיום ביג!`}</Typography>
           </div>
-        </div>
+        </div> */}
         
         <div className={classes.form}>
           <Typography variant={desktop ? "h4" : "h5"}>
-            {`לקביעת שיחת התאמה קלילה`}
+            {`כדי להירשם עכשיו במחיר מיוחד למחזורי נובמבר השאירו פרטים. פה >`}
+          </Typography>
+          <Typography style={{marginTop: -8}} variant={desktop ? "h4" : "h5"}>
+            {`(לסילבוס ומידע נוסף המשיכו לגלול למטה.)`}
           </Typography>
           <div className={classes.inputs}>
             <Paper style={{padding: 5}}>
@@ -335,7 +328,7 @@ export const Contact = inject()(observer((props) =>  {
             <Button onClick={sendUserInfo} color="secondary" size="large" className={classes.button} variant="contained">שלח</Button>
           </div>
         </div>
-        <div className={classes.contactMe}>
+        {/* <div className={classes.contactMe}>
           <Typography variant={desktop ? "h4" : "h5"}>
             {`אפשר גם כאן:`}
           </Typography>
@@ -345,7 +338,7 @@ export const Contact = inject()(observer((props) =>  {
           <Typography variant={desktop ? "h4" : "h5"}>
             {`050-2277684`}
           </Typography>
-        </div>
+        </div> */}
 
         
       </div>
