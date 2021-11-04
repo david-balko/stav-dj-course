@@ -140,6 +140,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(6),
         marginBottom: theme.spacing(2)
       },
+      marginRight: -theme.spacing(2)
     },
     width: '70%'
   },
@@ -151,6 +152,13 @@ const useStyles = makeStyles(theme => ({
       '& > *': {
         width: '80%'
       }
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginRight: 0,
+      '& > *': {
+        width: '100%'
+      },
+      width: '80%'
     },
     width: '80%'
   },
