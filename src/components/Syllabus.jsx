@@ -224,7 +224,7 @@ const useStyles = makeStyles(theme => ({
   },
   imageContainer: {
     position: 'absolute',
-    top: '-20vh',
+    top: '-5vh',
     right: '-20vw',
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {

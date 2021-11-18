@@ -142,10 +142,13 @@ const useStyles = makeStyles(theme => ({
       },
       marginRight: -theme.spacing(2)
     },
-    width: '70%'
+    width: '100%'
   },
   inputs: {
-    marginRight: '80%',
+    // marginRight: '50%',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     marginTop: -theme.spacing(2),
     '& > *': {
       margin: theme.spacing(2),
@@ -158,9 +161,11 @@ const useStyles = makeStyles(theme => ({
       '& > *': {
         width: '100%'
       },
-      width: '80%'
+      width: '80%',
+      flexDirection: 'column'
     },
-    width: '80%'
+    width: '100%',
+    // height: '30%'
   },
   button: {
     fontSize: 25,
@@ -321,13 +326,13 @@ export const ContactShort = inject()(observer((props) =>  {
             {`(לסילבוס ומידע נוסף המשיכו לגלול למטה.)`}
           </Typography>
           <div className={classes.inputs}>
-            <Paper style={{padding: 5}}>
+            <Paper style={desktop ? {padding: 5, width: '15%', height: '50%'} : { padding: 5 }}>
               <InputBase value={name} onChange={({ target }) => setName(target.value)} variant="outlined" placeholder="שם" />
             </Paper>
-            <Paper style={{padding: 5}}>
+            <Paper style={desktop ? {padding: 5, width: '15%', height: '50%'} : { padding: 5 }}>
               <InputBase value={email} onChange={({ target }) => setEmail(target.value)} variant="outlined" placeholder="אימייל" />
             </Paper>
-            <Paper style={{padding: 5}}>
+            <Paper style={desktop ? {padding: 5, width: '15%', height: '50%'} : { padding: 5 }}>
               <InputBase value={phone} onChange={({ target }) => setPhone(target.value)} variant="outlined" placeholder="טלפון" />
             </Paper>
             <Paper style={{padding: 5}}>

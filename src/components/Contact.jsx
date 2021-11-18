@@ -8,20 +8,6 @@ import{ init } from 'emailjs-com';
 init("user_Yot4vNSw7IyITx5P1TaGG");
 
 const lessonDates1 = [
-  `ג' 16.11`,
-  `ג' 23.11`,
-  `ג' 30.11`,
-  `ג' 07.12`,
-  `ג' 14.12`,
-  `ג' 21.12`,
-  `ג' 28.12`,
-  `ג' 04.01`,
-  `ג' 11.01`,
-  `ג' 18.01`,
-  `ג' 25.01`
-]
-
-const lessonDates2 = [
   `ד' 17.11`,
   `ד' 24.11`,
   `ד' 01.12`,
@@ -33,6 +19,20 @@ const lessonDates2 = [
   `ד' 12.01`,
   `ד' 19.01`,
   `ד' 26.01`
+]
+
+const lessonDates2 = [
+  `ג' 23.11`,
+  `ג' 30.11`,
+  `ג' 07.12`,
+  `ג' 14.12`,
+  `ג' 21.12`,
+  `ג' 28.12`,
+  `ג' 04.01`,
+  `ג' 11.01`,
+  `ג' 18.01`,
+  `ג' 25.01`,
+  `ג' 02.02`
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -240,7 +240,8 @@ export const Contact = inject()(observer((props) =>  {
         <div className={classes.cyclesAndPrice}>
           <div className={classes.cycles}>
             <div style={{display: 'flex', flexDirection: 'column', }}>
-              <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ב׳`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ב׳`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ההרשמה נסגרה!`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates1[0]}</Typography>
                 <Typography variant="h6">{lessonDates1[0 + numRows]}</Typography>
