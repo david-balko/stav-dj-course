@@ -22,9 +22,6 @@ const lessonDates1 = [
 ]
 
 const lessonDates2 = [
-  `ג' 23.11`,
-  `ג' 30.11`,
-  `ג' 07.12`,
   `ג' 14.12`,
   `ג' 21.12`,
   `ג' 28.12`,
@@ -32,7 +29,10 @@ const lessonDates2 = [
   `ג' 11.01`,
   `ג' 18.01`,
   `ג' 25.01`,
-  `ג' 02.02`
+  `ג' 02.02`,
+  `ג' 09.02`,
+  `ג' 16.02`,
+  `ג' 23.02`,
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -89,6 +89,7 @@ const useStyles = makeStyles(theme => ({
   cycles: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
     '& > *': {
       margin: theme.spacing(4),
     },
@@ -101,7 +102,7 @@ const useStyles = makeStyles(theme => ({
     // marginRight: theme.spacing(6),
   },
   cyclesAndPrice: {
-    width: '40%',
+    width: '33%',
     textAlign: 'right',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -110,7 +111,7 @@ const useStyles = makeStyles(theme => ({
   },
   contactMe: {
     marginRight: theme.spacing(2),
-    width: '30%',
+    width: '33%',
     textAlign: 'right',
     '& > *': {
       margin: theme.spacing(4),
@@ -141,7 +142,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom: theme.spacing(2)
       },
     },
-    width: '30%'
+    width: '33%'
   },
   inputs: {
     marginTop: -theme.spacing(2),
@@ -239,7 +240,7 @@ export const Contact = inject()(observer((props) =>  {
       <div className={classes.text}>
         <div className={classes.cyclesAndPrice}>
           <div className={classes.cycles}>
-            <div style={{display: 'flex', flexDirection: 'column', }}>
+            {/* <div style={{display: 'flex', flexDirection: 'column', }}>
               <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ב׳`}</Typography>
               <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ההרשמה נסגרה!`}</Typography>
               <div className={classes.cycleRow}>
@@ -268,8 +269,8 @@ export const Contact = inject()(observer((props) =>  {
                     <Typography variant="h6">{`מסיבת סיום`}</Typography>
                   </div>
               </div>
-            </div>
-            <div style={{display: 'flex', flexDirection: 'column', }}>
+            </div> */}
+            <div style={{display: 'flex', flexDirection: 'column', alignSelf: 'center'}}>
               <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ג׳`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates2[0]}</Typography>
@@ -311,7 +312,7 @@ export const Contact = inject()(observer((props) =>  {
             </div> */}
           </div>
           <div className={classes.price}>
-            <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה10/11 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography>
+            <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה6/12 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography>
             <Typography variant={desktop ? "h5" : "h6"}>{`11 מפגשים ומסיבת סיום ביג!`}</Typography>
           </div>
         </div>

@@ -104,7 +104,7 @@ function App() {
       <div className="App">
         <Welcome />
         <CourseDetails />
-        <ContactShort />
+        {/* <ContactShort /> */}
         <Syllabus />
         <Instructor />
         <Contact />
