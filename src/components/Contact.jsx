@@ -22,17 +22,17 @@ const lessonDates1 = [
 ]
 
 const lessonDates2 = [
-  `ג' 14.12`,
-  `ג' 21.12`,
-  `ג' 28.12`,
-  `ג' 04.01`,
-  `ג' 11.01`,
-  `ג' 18.01`,
-  `ג' 25.01`,
-  `ג' 02.02`,
-  `ג' 09.02`,
-  `ג' 16.02`,
-  `ג' 23.02`,
+  `א' 02.01`,
+  `א' 09.01`,
+  `א' 16.01`,
+  `א' 23.01`,
+  `א' 30.01`,
+  `א' 06.02`,
+  `א' 13.02`,
+  `א' 20.02`,
+  `א' 27.02`,
+  `א' 06.03`,
+  `א' 13.03`,
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -312,7 +312,8 @@ export const Contact = inject()(observer((props) =>  {
             </div> */}
           </div>
           <div className={classes.price}>
-            <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה6/12 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography>
+            <Typography variant={desktop ? "h5" : "h6"}>{`עלות הקורס 2600 ש״ח.`}</Typography>
+            {/* <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה6/12 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography> */}
             <Typography variant={desktop ? "h5" : "h6"}>{`11 מפגשים ומסיבת סיום ביג!`}</Typography>
           </div>
         </div>
