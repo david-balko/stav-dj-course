@@ -10,17 +10,16 @@ const lessons = [
     points: [
       "המנוע הפנימי שלי לעולם התקלוט",
       "לומדים את ה-תוכנה Rekordbox",
-      "למה כל הציוד הזה?",
       "מיקס ראשון Crossfader"
     ]
   },
   {
     smallTitle: "מפגש שני",
-    bigTitle: "איך הכל התחיל",
+    bigTitle: "יסודות התקלוט",
     points: [
+      "מה זה Bpm? לומדים לספור פעימות",
       "היסטוריית המוזיקה האלקטרונית",
-      "איך קונים ומשיגים מוזיקה חדשה",
-      "מה זה Bpm? לומדים לספור פעימות"
+      "ביטמיקס - Beatmix",
     ]
   },
   {
@@ -29,7 +28,7 @@ const lessons = [
     points: [
       "מבנה של שיר",
       "סדר וארגון בתוכנה ובמחשב",
-      "למה צריכים אוזניות."
+      "שימוש באוזניות"
     ]
   },
   {
@@ -55,7 +54,7 @@ const lessons = [
     bigTitle: "חוקרים איקולייזר לעומק",
     points: [
       "פילטרים",
-      "איקיו מתקדם",
+      "מיקסים בעזרת אקולייזר",
       "הופכים אותו לחבר."
     ]
   },
@@ -84,13 +83,13 @@ const lessons = [
     bigTitle: "שיווק כדרך חיים (אמן אורח רועי זינגר DJ Oatmilk)",
     points: [
       "שיווק דיגיטלי לדיג'ייז",
-      "מה הקשיים בעולם השיווק העצמי ואיך מתגברים עליהם",
+      "מה הקשיים לשווק את עצמנו.",
       "סושיאל מדיה"
     ]
   },
   {
     smallTitle: "מפגש עשירי",
-    bigTitle: "איך הופכים למיוחדים בנוף",
+    bigTitle: "סט שמספר סיפור.",
     points: [
       "נעבור על כל סוגי הסטים השונים",
       "איך בונים סט בצורה מרתקת?",
@@ -108,10 +107,11 @@ const lessons = [
   },
   {
     smallTitle: "מפגש שתיים עשרה",
-    bigTitle: "תחשבו טוב! מה הקשר בין רדבול להצלחה?",
+    bigTitle: "הכנות אחרונות לקראת המסיבה",
     points: [
-      "התקלוט הראשון שלכם, מתרגשים ביחד!",
-      "אירוע לכל החברים בבר תל אביב מקסים שכל אחד ינגן סט במשך חצי שעה."
+      "עובדים ביחד על הסטים למסיבה.",
+      "חיבוקים",
+      "נישוקים ודרך צלחה",
     ]
   },
 ]
@@ -119,11 +119,12 @@ const lessons = [
 const useStyles = makeStyles(theme => ({
   courseDetails: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    // background: `linear-gradient(rgba(131, 56, 236, 0.60), rgba(131, 56, 236, 0.60))`,
+    // background: `linear-gradient(rgba(131, 56, 236, 0.60), rgba(131, 56, 236, 0.60))`,rgba(255, 156, 121, 1)
+    background: `rgba(255, 244, 182, 0.60)`,
     width: '100%',
     // height: '100%',
     position: 'relative',
-    marginBottom: theme.spacing(15),
+    // marginBottom: theme.spacing(15),
     // backgroundSize: 'cover',
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center',
@@ -194,7 +195,9 @@ const useStyles = makeStyles(theme => ({
     // backgroundColor: 'rgb(137,136,223)',
     position: 'relative',
     zIndex: 2,
-    backgroundColor: 'rgb(94, 212, 200, 0.6)',
+    // backgroundColor: 'rgb(94, 212, 200, 0.6)',
+    // backdropFilter: 'blur(5px)',
+    backgroundColor: 'rgb(62, 204, 189, 0.8)',
     backdropFilter: 'blur(5px)',
     // border: '1px solid #6A040F',
     borderRadius: 8,
@@ -223,6 +226,7 @@ const useStyles = makeStyles(theme => ({
     animation: `$textEnter 750ms ${theme.transitions.easing.easeInOut}`,
   },
   imageContainer: {
+    zIndex: 2,
     position: 'absolute',
     top: '-5vh',
     right: '-20vw',

@@ -7,8 +7,8 @@ const useStyles = makeStyles(theme => ({
 
   svgBackground: {
     position: 'fixed',
-    zIndex: -1,
-    backgroundColor: '#2ca79b',
+    zIndex: 1,
+    // backgroundColor: '#2ca79b',
     height: '100%',
     width: '100%'
   },

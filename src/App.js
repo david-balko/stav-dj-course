@@ -10,6 +10,7 @@ import Aran400 from './fonts/os_aran_400ffc-webfont.woff2';
 import Aran500 from './fonts/os_aran_w_500ffc-webfont.woff2';
 import { Background2 } from './components/Background2';
 import { ContactShort } from './components/ContactShort';
+import { StudentTales } from './components/StudentTales'
 
 const secularOne = {
   fontFamily: 'SecularOne',
@@ -104,9 +105,10 @@ function App() {
       <div className="App">
         <Welcome />
         <CourseDetails />
+        <Instructor />
+        {/* <StudentTales /> */}
         {/* <ContactShort /> */}
         <Syllabus />
-        <Instructor />
         <Contact />
       </div>
     </ThemeProvider>

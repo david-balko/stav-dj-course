@@ -8,31 +8,33 @@ import{ init } from 'emailjs-com';
 init("user_Yot4vNSw7IyITx5P1TaGG");
 
 const lessonDates1 = [
-  `ד' 17.11`,
-  `ד' 24.11`,
-  `ד' 01.12`,
-  `ד' 08.12`,
-  `ד' 15.12`,
-  `ד' 22.12`,
-  `ה' 30.12`,
-  `ד' 05.01`,
-  `ד' 12.01`,
-  `ד' 19.01`,
-  `ד' 26.01`
+  `25.04`,
+  `02.05`,
+  `09.05`,
+  `16.05`,
+  `23.05`,
+  `30.05`,
+  `06.06`,
+  `13.06`,
+  `20.06`,
+  `27.06`,
+  `04.07`,
+  `11.07`
 ]
 
 const lessonDates2 = [
-  `א' 02.01`,
-  `א' 09.01`,
-  `א' 16.01`,
-  `א' 23.01`,
-  `א' 30.01`,
-  `א' 06.02`,
-  `א' 13.02`,
-  `א' 20.02`,
-  `א' 27.02`,
-  `א' 06.03`,
-  `א' 13.03`,
+  `26.04`,
+  `03.05`,
+  `10.05`,
+  `17.05`,
+  `24.05`,
+  `31.05`,
+  `07.06`,
+  `14.06`,
+  `21.06`,
+  `28.06`,
+  `05.07`,
+  `12.07`
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -40,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
     // background: `linear-gradient(rgba(157, 78, 221, 0.60), rgba(157, 78, 221, 0.60)), url(${contactBackground})`,
     // backgroundColor: '#EAE0CC',
-    backgroundColor: '#ffbd9c',
+    background: `rgba(255, 93, 32, 0.60)`,
     width: '100%',
     // height: '80vh',
     backgroundSize: 'cover',
@@ -51,9 +53,9 @@ const useStyles = makeStyles(theme => ({
     // alignItems: 'center',
     // justifyContent: 'space-around',
     '& > *': {
-      margin: theme.spacing(2)
+      // margin: theme.spacing(2)
     },
-    padding: theme.spacing(4),
+    // padding: theme.spacing(4),
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       height: 'auto'
@@ -67,6 +69,7 @@ const useStyles = makeStyles(theme => ({
   details: {
   },
   text: {
+    zIndex: 2,
     direction: 'rtl',
     display: 'flex',
     flexDirection: 'row',
@@ -102,7 +105,7 @@ const useStyles = makeStyles(theme => ({
     // marginRight: theme.spacing(6),
   },
   cyclesAndPrice: {
-    width: '33%',
+    width: '40%',
     textAlign: 'right',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -111,7 +114,7 @@ const useStyles = makeStyles(theme => ({
   },
   contactMe: {
     marginRight: theme.spacing(2),
-    width: '33%',
+    width: '30%',
     textAlign: 'right',
     '& > *': {
       margin: theme.spacing(4),
@@ -142,7 +145,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom: theme.spacing(2)
       },
     },
-    width: '33%'
+    width: '30%'
   },
   inputs: {
     marginTop: -theme.spacing(2),
@@ -161,7 +164,6 @@ const useStyles = makeStyles(theme => ({
     color: 'white'
   },
   price: {
-    width: "90%",
     alignSelf: 'flex-start',
     [theme.breakpoints.down('sm')]: {
       width: "100%",
@@ -170,7 +172,8 @@ const useStyles = makeStyles(theme => ({
     },
     display: 'flex', 
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifySelf: 'center'
   },
   cycleHeader: {
     [theme.breakpoints.down('sm')]: {
@@ -236,13 +239,13 @@ export const Contact = inject()(observer((props) =>  {
 
   return (
     <div id="contact" className={classes.contact}>
-      {!props.isFirst && <Typography variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>}
+      {!props.isFirst && <Typography style={{ marginTop: 16, marginRight: 16, zIndex: 2 }} variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>}
       <div className={classes.text}>
         <div className={classes.cyclesAndPrice}>
           <div className={classes.cycles}>
-            {/* <div style={{display: 'flex', flexDirection: 'column', }}>
-              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ב׳`}</Typography>
-              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ההרשמה נסגרה!`}</Typography>
+            <div style={{display: 'flex', flexDirection: 'column', }}>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ד׳`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שני 17:00 - 20:30`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates1[0]}</Typography>
                 <Typography variant="h6">{lessonDates1[0 + numRows]}</Typography>
@@ -266,12 +269,13 @@ export const Contact = inject()(observer((props) =>  {
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates1[5]}</Typography>
                   <div>
-                    <Typography variant="h6">{`מסיבת סיום`}</Typography>
+                    <Typography variant="h6">{lessonDates1[5 + numRows]}</Typography>
                   </div>
               </div>
-            </div> */}
+            </div>
             <div style={{display: 'flex', flexDirection: 'column', alignSelf: 'center'}}>
-              <Typography className={classes.cycleHeader} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ג׳`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ה׳`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שלישי 10:00 - 13:30`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates2[0]}</Typography>
                 <Typography variant="h6">{lessonDates2[0 + numRows]}</Typography>
@@ -295,21 +299,10 @@ export const Contact = inject()(observer((props) =>  {
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates2[5]}</Typography>
                   <div>
-                    <Typography variant="h6">{`מסיבת סיום`}</Typography>
+                    <Typography variant="h6">{lessonDates2[5 + numRows]}</Typography>
                   </div>
               </div>
             </div>
-            {/* <div>
-              <Typography variant="h4">{`מחזור #2`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-              <Typography variant="h6">{`ג' 5.5`}</Typography>
-            </div> */}
           </div>
           <div className={classes.price}>
             <Typography variant={desktop ? "h5" : "h6"}>{`עלות הקורס 2600 ש״ח.`}</Typography>

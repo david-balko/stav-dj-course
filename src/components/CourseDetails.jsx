@@ -5,7 +5,7 @@ import { ReactComponent as MixerSvg } from '../assets/dj-mixer.svg'
 
 const useStyles = makeStyles(theme => ({
   courseDetails: {
-    // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
+    background: `linear-gradient(rgba(176, 141, 255, 0.60), rgba(176, 141, 255, 0.60))`,
     // background: `linear-gradient(rgba(131, 56, 236, 0.60), rgba(131, 56, 236, 0.60))`,
     width: '100%',
     // height: '100%',
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     // backgroundAttachment: 'fixed',
     // backgroundPosition: 'center',
     display: 'flex',
-    marginBottom: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: 30,
@@ -106,11 +106,12 @@ const useStyles = makeStyles(theme => ({
     },
     animation: `$textEnter 750ms ${theme.transitions.easing.easeInOut}`,
     '& > *': {
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(2)
+      marginTop: theme.spacing(0.5),
+      marginBottom: theme.spacing(0.5)
     }
   },
   imageContainer: {
+    zIndex: 2,
     position: 'absolute',
     top: '-30vh',
     left: '-18vw',
@@ -206,16 +207,16 @@ export const CourseDetails = inject()(observer((props) =>  {
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr className={classes.headerBorder} />
               </div>
-              <Typography variant={desktop ? "h5" : "h6"}>
-                {`הקורס מיועד למי שחולמים להיות על עמדת הדיג'יי, לבטא את עצמם בעזרת תקלוט ולגעת באנשים בעזרת המוזיקה שלך.`}
+              <Typography variant={desktop ? "h6" : "h6"}>
+                {`מורכב מ 12 מפגשים שבועיים של שלוש וחצי שעות בקבוצה קטנה של שישה משתתפים באולפן שמרגיש כמו בית באווירה חברית מאוד וגם מקצועית.`}
                 <br />
-                {`נשתמש בתוכנת רקורדבוקס שאותה נלמד לעומק ממנה נעבור לסוגי המיקסים השונים כמו קאט מיקס וביט מיקס, אפקטים לופים ושיווק דיגיטלי מאמן אורח.`}
+                {`במהלך הקורס כל אחד מקבל שעה פרטנית איתי.`}
                 <br />
-                {`תיאוריה מוזיקלית והרמוניה שמדויקת לדיגייז ובעיקר ביטחון לעלות על הבמה כשיגמר הקורס.`}
+                {`שיעור שיווק לדיגיז מתחילים על ידי אמן אורח.`}
                 <br />
-                {`את כל אלו נלמד בקבוצה קטנה של חמישה משתתפים כדי שתהיה אפשרות לכל אחד לבטא את עצמו ואת הקשיים שלו בתהליך.`}
+                {`שיעור מאורח בהתגברות על פחדים ומחסומים.`}
                 <br />
-                {`לבסוף גם נעשה מסיבת סיום קורס בתל אביב.`}
+                {`בנוסף גם תקבלו תיקיית מוזיקה שאיתה אפשר להתחיל את המסע.`}
               </Typography>
               {/* <ul className={classes.list}>
                 <li >
@@ -241,24 +242,22 @@ export const CourseDetails = inject()(observer((props) =>  {
               </ul> */}
 
               <Typography className={classes.header} variant="h4">
-                {`מיקום`}
+                {`למי הוא מתאים`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr className={classes.headerBorder} />
               </div>
-              <Typography variant={desktop ? "h5" : "h6"}>
-                {`הקורס מתרחש באולפני הצוללת בחדר מקצועי ומטופל אקוסטית, כבר מעל לעשרים שנה וזה מקום שברגע שנכנסים מרגישים את ההיסטוריה המוזיקלית שעברה בו גם מאיר אריאל הקליט שם מוזיקה והמקום יהווה לנו בית לשלושה חודשים.`}
-                <br />
-                {`רחוב: יוסף קארו 18 תל אביב.`}
+              <Typography variant={desktop ? "h6" : "h6"}>
+                {`לך ולך ולך ולך!! סתם תכלס הקורס מתאים למי שרוצה להתפתח ולהתקדם בתוך עולמות מוזיקלים ולכם! שרוצים לגעת באנשים דרך מוזיקה ולהרים רחבות.`}
               </Typography>
               <Typography className={classes.header} variant="h4">
-                {`למי מיועד הקורס?`}
+                {`הקבוצה`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
                 <hr className={classes.headerBorder} />
               </div>
-              <Typography variant={desktop ? "h5" : "h6"}>
-                {`הוא מיועד לכל האנשים החולמים להכניס את עצמם לסצנת המסיבות ואירועים. לכל אחד שמעוניין לבטא את עצמו דרך יצירה מוזיקלית לייב מול קהל וגם לאלו שפשוט רוצים לרכוש תחביב חדש מגניב או להגדיל את ארסנל הכלים המוזיקלים שלהם.`}
+              <Typography variant={desktop ? "h6" : "h6"}>
+                {`גוד וייבס אנשים טובים נוצרת אווירה חברית ומרימה, שנותנת דרייב להגיע כל שבוע להתקדם בקצב מהיר.`}
               </Typography>
               {/* <ul className={classes.list}>
                 <li >
@@ -272,7 +271,7 @@ export const CourseDetails = inject()(observer((props) =>  {
                   </Typography>
                 </li>
               </ul> */}
-              <Typography className={classes.header} variant="h4">
+              {/* <Typography className={classes.header} variant="h4">
                 {`איזה ציוד צריך?`}
               </Typography>
               <div style={{width: '30%', alignSelf: 'flex-start', marginLeft: 'auto'}}>
@@ -282,7 +281,7 @@ export const CourseDetails = inject()(observer((props) =>  {
                 {`קונטרולר DDJ400 ומעלה בשביל התרגול בבית, תוכנת רקורדבוקס (מגיעה ברכישת קונטרולר), אוזניות וכבלים.`}
                 <br />
                 {`דברו איתי לפני שאתם רוכשים ותיהיה לכם הנחה עבור הקונטרולר שלכם.`}
-              </Typography>
+              </Typography> */}
             </div>
           </LazyLoad>
         </div>
