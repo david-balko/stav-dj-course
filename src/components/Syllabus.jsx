@@ -120,7 +120,7 @@ const useStyles = makeStyles(theme => ({
   courseDetails: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
     // background: `linear-gradient(rgba(131, 56, 236, 0.60), rgba(131, 56, 236, 0.60))`,rgba(255, 156, 121, 1)
-    background: `rgba(255, 244, 182, 0.60)`,
+    background: `rgba(255, 244, 182, 1)`,
     width: '100%',
     // height: '100%',
     position: 'relative',
@@ -354,7 +354,7 @@ export const Syllabus = inject()(observer((props) => {
 
   return (
     <>
-      <div className={classes.courseDetails} id="course-details">
+      <div className={classes.courseDetails} id="syllabus">
 
         <LazyLoad className={classes.courseDetail} offset={desktop ? 0 : 0}  >
 

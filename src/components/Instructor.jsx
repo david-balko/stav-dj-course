@@ -5,7 +5,8 @@ import instructorPic from '../assets/instructor-pic-2.JPG'
 const useStyles = makeStyles(theme => ({
   instructor: {
     // background: 'linear-gradient(147deg, #03071e 0%, #faa307 100%);',
-    background: `rgba(255, 93, 32, 0.60)`,
+    // background: `rgba(44, 167, 155, 1)`,
+    background: `rgba(48, 194, 180, 1)`,
     // background: `linear-gradient(rgba(255, 109, 0, 0.60), rgba(255, 109, 0, 0.60)), url(${instructorBackground})`,
     width: '100%',
     // height: '90vh',
@@ -44,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     // padding: theme.spacing(2),
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flexDirection: 'column',
     width: '100%',
     '& > *': {
@@ -61,7 +62,7 @@ const useStyles = makeStyles(theme => ({
     flex: 'none'
   },
   text: {
-    width: '100%',
+    // width: '100%',
     '& *': {
       margin: theme.spacing(2)
     },
@@ -70,7 +71,7 @@ const useStyles = makeStyles(theme => ({
   instructorDetails: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
@@ -86,7 +87,9 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(10)
   },
   header: {
-    color: '#EAE0CC'
+    color: '#EAE0CC',
+    textAlign: 'right',
+    margin: theme.spacing(2)
   }
 }))
 
@@ -107,9 +110,11 @@ export const Instructor = inject()(observer((props) =>  {
         <div className={classes.instructorDetails}>
           <Avatar alt="Ron Ramball" src={instructorPic} imgProps={{height: '150%'}} style={{width: desktop ? '20vw' : '60vw', height: desktop ? '20vw' : '60vw'}} />
           <div className={classes.text}>
-            <Typography className={classes.header} variant={desktop ? "h3" : "h4"}>
-              {`קצת עליי`}
-            </Typography>
+            <div>
+              <Typography className={classes.header} variant={desktop ? "h3" : "h4"}>
+                {`קצת עליי`}
+              </Typography>
+            </div>
             <div style={{textAlign: 'right'}}>
               {/* <Typography variant={desktop ? "h4" : "h5"}>
                 {`שמח שהגעתם הנה,`}

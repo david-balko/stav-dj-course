@@ -111,6 +111,7 @@ const useStyles = makeStyles(theme => ({
       width: '100%',
       textAlign: 'center',
     },
+    alignItems: 'center'
   },
   contactMe: {
     marginRight: theme.spacing(2),
@@ -173,7 +174,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex', 
     flexDirection: 'column',
     alignItems: 'center',
-    justifySelf: 'center'
+    justifySelf: 'center',
+    marginTop: 32,
   },
   cycleHeader: {
     [theme.breakpoints.down('sm')]: {
@@ -242,7 +244,13 @@ export const Contact = inject()(observer((props) =>  {
       {!props.isFirst && <Typography style={{ marginTop: 16, marginRight: 16, zIndex: 2 }} variant={desktop ? "h3" : "h4"}>{`בקיצור,`}</Typography>}
       <div className={classes.text}>
         <div className={classes.cyclesAndPrice}>
+        <div className={classes.price}>
+            <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה מוקדמת 3200,`}</Typography>
+            {/* <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה6/12 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography> */}
+            <Typography variant={desktop ? "h5" : "h6"}>{`לאחר מכן 3400.`}</Typography>
+          </div>
           <div className={classes.cycles}>
+            
             <div style={{display: 'flex', flexDirection: 'column', }}>
               <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ד׳`}</Typography>
               <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שני 17:00 - 20:30`}</Typography>
@@ -303,11 +311,6 @@ export const Contact = inject()(observer((props) =>  {
                   </div>
               </div>
             </div>
-          </div>
-          <div className={classes.price}>
-            <Typography variant={desktop ? "h5" : "h6"}>{`עלות הקורס 2600 ש״ח.`}</Typography>
-            {/* <Typography variant={desktop ? "h5" : "h6"}>{`מחיר הרשמה עד ה6/12 - `}<del>3000</del>&nbsp;{`2600 ש״ח`}</Typography> */}
-            <Typography variant={desktop ? "h5" : "h6"}>{`11 מפגשים ומסיבת סיום ביג!`}</Typography>
           </div>
         </div>
         

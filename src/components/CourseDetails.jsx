@@ -5,7 +5,7 @@ import { ReactComponent as MixerSvg } from '../assets/dj-mixer.svg'
 
 const useStyles = makeStyles(theme => ({
   courseDetails: {
-    background: `linear-gradient(rgba(176, 141, 255, 0.60), rgba(176, 141, 255, 0.60))`,
+    background: `rgba(255, 244, 182, 1)`,
     // background: `linear-gradient(rgba(131, 56, 236, 0.60), rgba(131, 56, 236, 0.60))`,
     width: '100%',
     // height: '100%',

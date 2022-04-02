@@ -7,7 +7,7 @@ import profilePic from '../assets/ron-rambell-logo.png'
 const useStyles = makeStyles(theme => ({
   welcome: {
     // background: `linear-gradient(rgba(255, 158, 0, 0.60), rgba(255, 158, 0, 0.60))`,rgba(164, 219, 248, 1)
-    background: `rgba(164, 219, 248, 0.60)`,
+    background: `rgba(48, 194, 180, 1)`,
     // background: `linear-gradient(rgba(255, 158, 0, 0.60), rgba(255, 158, 0, 0.60)), url(${welcomeBackground})`,
     width: '100%',
     height: '101vh',
@@ -39,12 +39,12 @@ const useStyles = makeStyles(theme => ({
       // top: window.innerWidth * (12.5/100),
       left: 0,
       width: '100vw',
-      height: '75vh',
+      height: '101vh',
       position: 'absolute',
       alignSelf: 'center',
-      [theme.breakpoints.down('sm')]: {
-        top: '25%'
-      },
+      // [theme.breakpoints.down('sm')]: {
+      //   top: '25%'
+      // },
       filter: 'blur(1px)',
       zIndex: 1,
     },
@@ -114,7 +114,14 @@ export const Welcome = inject()(observer((props) =>  {
     document.getElementById('contact').scrollIntoView({
       behavior: 'smooth',
       block: 'start',
+      duration: 1500
     })
+    setTimeout(() => {
+      document.getElementById('contact').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }, 1000)
     setTimeout(() => {
       document.getElementById('contact').scrollIntoView({
         behavior: 'smooth',
@@ -138,10 +145,8 @@ export const Welcome = inject()(observer((props) =>  {
           <Typography style={{ direction: 'rtl' }} variant={desktop ? "h2" : "h4"} paragraph>
             ברוכים הבאים
             </Typography>
-            <Typography style={{ direction: 'rtl' }} variant={desktop ? "h4" : "h6"} paragraph>
+            <Typography style={{ direction: 'rtl' }} variant={desktop ? "h4" : "h5"} paragraph>
             {`לקורס שאחריו אתם כבר על העמדה.`}
-            <br />
-            {`בעזרת מנטורינג אישי ולמידה מקצועית בקבוצות קטנות, באווירה שמחה וחברית.`}
           </Typography>
           <Button color="primary" size="large" onClick={scrollToContact} variant="contained" className={classes.button}>להרשמה לחצו כאן</Button>
         </div>
