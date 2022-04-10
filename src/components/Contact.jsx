@@ -23,18 +23,17 @@ const lessonDates1 = [
 ]
 
 const lessonDates2 = [
-  `26.04`,
-  `03.05`,
-  `10.05`,
-  `17.05`,
-  `24.05`,
-  `31.05`,
+  `12.05`,
+  `19.05`,
+  `26.05`,
+  `02.06`,
+  `09.06`,
+  `16.06`,
+  `23.06`,
+  `30.06`,
   `07.06`,
-  `14.06`,
-  `21.06`,
-  `28.06`,
-  `05.07`,
-  `12.07`
+  `14.07`,
+  `21.07`
 ]
 
 const useStyles = makeStyles(theme => ({
@@ -253,7 +252,7 @@ export const Contact = inject()(observer((props) =>  {
             
             <div style={{display: 'flex', flexDirection: 'column', }}>
               <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ד׳`}</Typography>
-              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שני 17:00 - 20:30`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שלישי 10:00 - 13:30`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates1[0]}</Typography>
                 <Typography variant="h6">{lessonDates1[0 + numRows]}</Typography>
@@ -283,7 +282,7 @@ export const Contact = inject()(observer((props) =>  {
             </div>
             <div style={{display: 'flex', flexDirection: 'column', alignSelf: 'center'}}>
               <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={desktop ? "h4" : "h5"}>{`מחזור ה׳`}</Typography>
-              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שלישי 10:00 - 13:30`}</Typography>
+              <Typography style={{alignSelf: 'center', marginBottom: 0}} paragraph variant={"h6"}>{`ימי שלישי 17:00 - 20:30`}</Typography>
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates2[0]}</Typography>
                 <Typography variant="h6">{lessonDates2[0 + numRows]}</Typography>
@@ -307,7 +306,7 @@ export const Contact = inject()(observer((props) =>  {
               <div className={classes.cycleRow}>
                 <Typography variant="h6">{lessonDates2[5]}</Typography>
                   <div>
-                    <Typography variant="h6">{lessonDates2[5 + numRows]}</Typography>
+                    <Typography variant="h6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Typography>
                   </div>
               </div>
             </div>
